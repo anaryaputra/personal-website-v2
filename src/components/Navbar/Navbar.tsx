@@ -6,7 +6,7 @@ import { AppBar, Container, Toolbar } from '@mui/material';
 
 export default function Navbar() {
 	return (
-		<AppBar className='bg-black' position='sticky'>
+		<AppBar position='sticky' sx={{ background: '#000' }}>
 			<Container className='max-w-[1180px] p-0'>
 				<Toolbar className='flex flex-row justify-between p-0'>
 					<Logo className='max-w-[32px] lg:max-w-none' />
