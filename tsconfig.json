@@ -15,11 +15,19 @@
 		"incremental": true,
 		"paths": {
 			"@/*": ["./src/*"],
+			"@/assets/*": ["./src/assets/*"],
 			"@/components/*": ["./src/components/*"],
-			"@/components/heading": ["./src/components/heading/Heading"],
-			"@/components/hero": ["./src/components/hero/Hero"],
-			"@/components/text": ["./src/components/text/Text"],
-			"@/assets/*": ["./src/assets/*"]
+			"@/components/button": ["src/components/Button/Button"],
+			"@/components/heading": ["src/components/Heading/Heading"],
+			"@/components/hero": ["src/components/Hero/Hero"],
+			"@/components/logo": ["src/components/Logo/Logo"],
+			"@/components/navbar": ["src/components/Navbar/Navbar"],
+			"@/components/navbarLink": ["src/components/NavbarLink/NavbarLink"],
+			"@/components/navbarMenu": ["src/components/NavbarMenu/NavbarMenu"],
+			"@/components/text": ["src/components/Text/Text"],
+			"@/data/*": ["src/data/*"],
+			"@/data/landingPageLinks": ["src/data/LandingPageLinks.ts"],
+			"@/utils/*": ["./src/utils/*"]
 		},
 		"baseUrl": "."
 	},
