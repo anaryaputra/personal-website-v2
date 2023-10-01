@@ -51,23 +51,6 @@
 			"@components/surfaces/transitionsModal": ["./src/components/Surfaces/TransitionsModal/TransitionsModal"],
 			"@components/typography/heading": ["./src/components/Typography/Heading/Heading"],
 			"@components/typography/text": ["./src/components/Typography/Text/Text"]
-
-			// "@/components/separator": ["src/components/Separator/Separator"],
-			// "@/components/verticalTimeline": ["src/components/VerticalTimeline/VerticalTimeline"],
-			// "@/components/verticalTimelineConnector": [
-			// 	"src/components/VerticalTimelineConnector/VerticalTimelineConnector"
-			// ],
-			// "@/components/verticalTimelineContent": ["src/components/VerticalTimelineContent/VerticalTimelineContent"],
-			// "@/components/verticalTimelineSeparator": [
-			// 	"src/components/VerticalTimelineSeparator/VerticalTimelineSeparator"
-			// ],
-			// "@/components/verticalTimelineDot": ["src/components/VerticalTimelineDot/VerticalTimelineDot"],
-			// "@/components/verticalTimelineOppositeContent": [
-			// 	"src/components/VerticalTimelineOppositeContent/VerticalTimelineOppositeContent"
-			// ],
-			// "@/components/verticalTimelineItem": ["src/components/VerticalTimelineItem/VerticalTimelineItem"],
-
-			// "@/utils/*": ["./src/utils/*"]
 		},
 		"baseUrl": "."
 	},
