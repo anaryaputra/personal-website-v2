@@ -15,19 +15,59 @@
 		"incremental": true,
 		"paths": {
 			"@/*": ["./src/*"],
-			"@/assets/*": ["./src/assets/*"],
-			"@/components/*": ["./src/components/*"],
-			"@/components/button": ["src/components/Button/Button"],
-			"@/components/heading": ["src/components/Heading/Heading"],
-			"@/components/hero": ["src/components/Hero/Hero"],
-			"@/components/logo": ["src/components/Logo/Logo"],
-			"@/components/navbar": ["src/components/Navbar/Navbar"],
-			"@/components/navbarLink": ["src/components/NavbarLink/NavbarLink"],
-			"@/components/navbarMenu": ["src/components/NavbarMenu/NavbarMenu"],
-			"@/components/text": ["src/components/Text/Text"],
-			"@/data/*": ["src/data/*"],
-			"@/data/landingPageLinks": ["src/data/LandingPageLinks.ts"],
-			"@/utils/*": ["./src/utils/*"]
+
+			"@assets/*": ["./src/assets/*"],
+
+			"@data/experiences": ["./src/data/Experiences.ts"],
+			"@data/landingPageLinks": ["./src/data/LandingPageLinks.ts"],
+			"@data/projects": ["./src/data/Projects.ts"],
+
+			"@sections": ["./src/sections"],
+			"@sections/aboutMe": ["./src/sections/Index/AboutMe/AboutMe"],
+			"@sections/hero": ["./src/sections/Index/Hero/Hero"],
+
+			"@components": ["./src/components"],
+			"@components/carousel": ["./src/components/DataDisplay/Carousel/Carousel"],
+			"@components/carouselDotButton": ["./src/components/DataDisplay/CarouselDotButton/CarouselDotButton"],
+			"@components/dataDisplay/counter": ["./src/components/DataDisplay/Counter/Counter"],
+			"@components/dataDisplay/developerCollaborationIllustration": [
+				"./src/components/DataDisplay/DeveloperCollaborationIllustration/DeveloperCollaborationIllustration"
+			],
+			"@components/dataDisplay/developerIllustration": [
+				"./src/components/DataDisplay/DeveloperIllustration/DeveloperIllustration"
+			],
+			"@components/dataDisplay/logo": ["./src/components/DataDisplay/Logo/Logo"],
+			"@components/dataDisplay/separator": ["./src/components/DataDisplay/Separator/Separator"],
+			"@components/inputs/button": ["./src/components/Inputs/Button/Button"],
+			"@components/layout/page": ["./src/components/Layout/Page/Page"],
+			"@components/layout/section": ["./src/components/Layout/Section/Section"],
+			"@components/layout/sectionHeader": ["./src/components/Layout/SectionHeader/SectionHeader"],
+			"@components/layout/sectionBody": ["./src/components/Layout/SectionBody/SectionBody"],
+			"@components/layout/sectionFooter": ["./src/components/Layout/SectionFooter/SectionFooter"],
+			"@components/surfaces/experienceCard": ["src/components/Surfaces/ExperienceCard/ExperienceCard"],
+			"@components/surfaces/navbar": ["./src/components/Surfaces/Navbar/Navbar"],
+			"@components/surfaces/navbarLink": ["./src/components/Surfaces/NavbarLink/NavbarLink"],
+			"@components/surfaces/navbarMenu": ["./src/components/Surfaces/NavbarMenu/NavbarMenu"],
+			"@components/surfaces/transitionsModal": ["./src/components/Surfaces/TransitionsModal/TransitionsModal"],
+			"@components/typography/heading": ["./src/components/Typography/Heading/Heading"],
+			"@components/typography/text": ["./src/components/Typography/Text/Text"]
+
+			// "@/components/separator": ["src/components/Separator/Separator"],
+			// "@/components/verticalTimeline": ["src/components/VerticalTimeline/VerticalTimeline"],
+			// "@/components/verticalTimelineConnector": [
+			// 	"src/components/VerticalTimelineConnector/VerticalTimelineConnector"
+			// ],
+			// "@/components/verticalTimelineContent": ["src/components/VerticalTimelineContent/VerticalTimelineContent"],
+			// "@/components/verticalTimelineSeparator": [
+			// 	"src/components/VerticalTimelineSeparator/VerticalTimelineSeparator"
+			// ],
+			// "@/components/verticalTimelineDot": ["src/components/VerticalTimelineDot/VerticalTimelineDot"],
+			// "@/components/verticalTimelineOppositeContent": [
+			// 	"src/components/VerticalTimelineOppositeContent/VerticalTimelineOppositeContent"
+			// ],
+			// "@/components/verticalTimelineItem": ["src/components/VerticalTimelineItem/VerticalTimelineItem"],
+
+			// "@/utils/*": ["./src/utils/*"]
 		},
 		"baseUrl": "."
 	},
