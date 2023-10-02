@@ -1,25 +1,27 @@
 import { Button } from '@components';
 
-import { Backdrop, Box, Modal, Fade } from '@mui/material';
+import { Backdrop, Box, Fade, Modal } from '@mui/material';
 
 import { PropsWithChildren, useState } from 'react';
 
-type ModalProps = PropsWithChildren;
+type TransitionsModalProps = {
+	buttonText: string;
+} & PropsWithChildren;
 
-export function TransitionsModal({ children }: ModalProps) {
+export function TransitionsModal({ buttonText = 'Button', children, ...props }: TransitionsModalProps) {
 	const [open, setOpen] = useState(false);
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
 
 	return (
-		<Box className='w-full'>
+		<Box className='w-full' {...props}>
 			<Button
 				className='w-full font-medium hover:bg-white hover:text-black '
 				color='inherit'
 				variant='outlined'
 				onClick={handleOpen}
 			>
-				Find More Details
+				{buttonText}
 			</Button>
 			<Modal
 				aria-labelledby='transition-modal-title'
@@ -35,7 +37,7 @@ export function TransitionsModal({ children }: ModalProps) {
 				}}
 			>
 				<Fade in={open}>
-					<Box className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-8 rounded-xl hadow-2xl bg-neutral-800'>
+					<Box className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-8 rounded-xl shadow-2xl bg-neutral-800 opacity-100'>
 						{children}
 					</Box>
 				</Fade>

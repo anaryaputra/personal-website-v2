@@ -4,6 +4,10 @@ import { Poppins } from 'next/font/google';
 
 const poppins = Poppins({ weight: ['400', '600', '700'], subsets: ['latin'] });
 
+function container() {
+	return document.getElementById('__next');
+}
+
 export const theme = createTheme({
 	breakpoints: {
 		values: {
@@ -12,6 +16,13 @@ export const theme = createTheme({
 			md: 768,
 			lg: 1024,
 			xl: 1280,
+		},
+	},
+	components: {
+		MuiModal: {
+			defaultProps: {
+				container,
+			},
 		},
 	},
 	palette: {
