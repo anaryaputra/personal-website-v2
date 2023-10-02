@@ -7,6 +7,7 @@ const config: Config = {
 		'./src/sections/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
+	important: '#__next',
 	theme: {
 		extend: {
 			backgroundColor: {
