@@ -35,7 +35,7 @@ export function ExperienceCard({
 				<Text className='text-xs text-center'>{`${start_date} - ${end_date}`}</Text>
 			</CardContent>
 			<CardActions className='w-full'>
-				<TransitionsModal>
+				<TransitionsModal buttonText='Find More Details'>
 					<Box className='flex flex-col justify-center align-middle items-center gap-8 w-full'>
 						<Image
 							alt={`${institution} logo`}

@@ -50,7 +50,10 @@
 			"@components/surfaces/navbarMenu": ["./src/components/Surfaces/NavbarMenu/NavbarMenu"],
 			"@components/surfaces/transitionsModal": ["./src/components/Surfaces/TransitionsModal/TransitionsModal"],
 			"@components/typography/heading": ["./src/components/Typography/Heading/Heading"],
-			"@components/typography/text": ["./src/components/Typography/Text/Text"]
+			"@components/typography/text": ["./src/components/Typography/Text/Text"],
+
+			"@styles/*": ["./src/styles/*"],
+			"@utils/*": ["./src/utils/*"]
 		},
 		"baseUrl": "."
 	},
