@@ -30,7 +30,7 @@ export default function ExperienceCard({
 					<Heading className='text-base/7 lg:text-base/8 font-medium'>{role}</Heading>
 				</Box>
 				<Box className='flex flex-col gap-4'>
-					<Text className='text-base/7 lg:text-base/8 text-center'>{description}</Text>
+					<Text className='text-sm/7 sm:text-base/7 lg:text-base/8 text-center'>{description}</Text>
 				</Box>
 				<Text className='text-sm/7 lg:text-sm/8 text-center'>{`${start_date} - ${end_date}`}</Text>
 			</CardContent>
@@ -51,7 +51,7 @@ export default function ExperienceCard({
 						<Box className='flex flex-col gap-8'>
 							<ol>
 								{long_description.map((longDesc, index) => (
-									<li key={index} className='list-disc text-base/7 lg:text-base/8'>
+									<li key={index} className='list-disc text-sm/7 sm:text-base/7 lg:text-base/8'>
 										{longDesc}
 									</li>
 								))}
