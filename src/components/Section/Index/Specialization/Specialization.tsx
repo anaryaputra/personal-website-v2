@@ -68,7 +68,7 @@ function Body() {
 							{specializationsData.specializations.map((specialization, index) => (
 								<Card
 									key={`specialization-${index}`}
-									className='flex flex-1 max-w-[23.25rem] min-w-[23.25rem] bg-transparent text-center text-white'
+									className='flex flex-1 max-w-[23.25rem] min-w-full bg-transparent text-center text-white'
 								>
 									<CardContent className='flex flex-col gap-8'>
 										<Box className='flex justify-center'>
