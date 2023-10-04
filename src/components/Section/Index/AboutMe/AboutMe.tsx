@@ -16,12 +16,13 @@ import {
 import { useIsDesktopContext } from '@/contexts';
 
 import { experiences as experiencesData } from '@/data/Experiences';
-import { projects as projectsData } from '@/data/Projects';
+import { projectContribution as projectContributionData } from '@/data/Projects';
 
 import { useFade, useLoaded } from '@/hooks';
 
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { Box } from '@mui/material';
+import Link from 'next/link';
 
 import { useState } from 'react';
 import { InView } from 'react-intersection-observer';
@@ -162,8 +163,8 @@ function ProjectContribution() {
 							</Heading>
 							<Box className='flex flex-col gap-6'>
 								<Box className='flex flex-row gap-6' data-fade={isDesktop ? '1' : '3'}>
-									<Counter count={projectsData.total_collaboration_project} label='Projects' />
-									<Counter count={projectsData.total_company} label='Companies' />
+									<Counter count={projectContributionData.total_project} label='Projects' />
+									<Counter count={projectContributionData.total_company} label='Companies' />
 								</Box>
 								<Box className='flex flex-col gap-4'>
 									<Text
@@ -173,20 +174,18 @@ function ProjectContribution() {
 										Contributed in several project across multiple companies such as:
 									</Text>
 									<Box className='flex flex-row gap-6' data-fade={isDesktop ? '1' : '5'}>
-										<Button
-											className='bg-white text-black'
-											startIcon={<OpenInNewIcon />}
-											variant='contained'
-										>
-											medbiz.id
-										</Button>
-										<Button
-											className='bg-white text-black'
-											startIcon={<OpenInNewIcon />}
-											variant='contained'
-										>
-											jict.co.id
-										</Button>
+										{projectContributionData.selected_project.map((project, index) => (
+											<Button
+												key={`selected-project-contribution-${index}`}
+												className='bg-white text-black'
+												startIcon={<OpenInNewIcon />}
+												variant='contained'
+												href={project.url}
+												target='_blank'
+											>
+												{project.url.replace('https://', '').replace('www.', '')}
+											</Button>
+										))}
 									</Box>
 								</Box>
 							</Box>
