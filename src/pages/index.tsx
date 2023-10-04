@@ -1,23 +1,30 @@
-import { Navbar, Page } from '@components';
+import { landingPageLinks } from '@/data/LandingPageLinks';
 
-import { landingPageLinks } from '@data/landingPageLinks';
-
-import { AboutMe, Hero } from '@sections';
+import { AboutMe, Hero, Navbar, Page, Specialization } from '@/components';
 
 import { Box } from '@mui/material';
 
 import { Poppins } from 'next/font/google';
+import Head from 'next/head';
+
+import { Fragment } from 'react';
 
 const poppins = Poppins({ weight: ['400', '600'], subsets: ['latin'] });
 
 export default function Home() {
 	return (
-		<Page id='home' className={poppins.className}>
-			<Hero />
-			<Navbar links={landingPageLinks.links} />
-			<Box className='flex flex-col py-32'>
-				<AboutMe />
-			</Box>
-		</Page>
+		<Fragment>
+			<Head>
+				<title>Anarya Putra</title>
+			</Head>
+			<Page id='home' className={poppins.className}>
+				<Hero />
+				<Navbar links={landingPageLinks} />
+				<Box className='flex flex-col gap-y-64 py-64'>
+					<AboutMe />
+					<Specialization />
+				</Box>
+			</Page>
+		</Fragment>
 	);
 }
