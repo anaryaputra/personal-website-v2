@@ -1,6 +1,8 @@
-import '@styles/globals.css';
+import { IsDesktopProvider } from '@/contexts';
 
-import { theme } from '@utils/theme';
+import '@/styles/globals.css';
+
+import { theme } from '@/utils/theme';
 
 import { StyledEngineProvider, ThemeProvider } from '@mui/material';
 
@@ -14,7 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<StyledEngineProvider injectFirst>
 			<ThemeProvider theme={theme}>
-				<Component className={`${poppins.className}`} {...pageProps} />
+				<IsDesktopProvider>
+					<Component className={`${poppins.className}`} {...pageProps} />
+				</IsDesktopProvider>
 			</ThemeProvider>
 		</StyledEngineProvider>
 	);
