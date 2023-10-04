@@ -87,7 +87,7 @@ function Body() {
 														''
 													)}`}
 											</Heading>
-											<Text className='text-base/7 lg:text-base/8'>
+											<Text className='text-sm/7 sm:text-base/7 lg:text-base/8'>
 												{specialization.description}
 											</Text>
 										</Box>

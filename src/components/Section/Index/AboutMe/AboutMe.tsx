@@ -122,7 +122,10 @@ function GetToKnowMe() {
 									Building the <span className='text-green-accent'>future</span>, one line of{' '}
 									<span className='text-green-accent'>code</span> at a time
 								</Heading>
-								<Text className='text-base/7 lg:text-base/8' data-fade={isDesktop ? '1' : '4'}>
+								<Text
+									className='text-sm/7 sm:text-base/7 lg:text-base/8'
+									data-fade={isDesktop ? '1' : '4'}
+								>
 									Highly dedicated, motivated, creative, and innovative problem solver with a good
 									sense of design. Excellent working in a team or independently. Fast learner and
 									quick to adapt. Passionate in solving problems through software development.
@@ -163,7 +166,10 @@ function ProjectContribution() {
 									<Counter count={projectsData.total_company} label='Companies' />
 								</Box>
 								<Box className='flex flex-col gap-4'>
-									<Text className='text-base/7 lg:text-base/8' data-fade={isDesktop ? '1' : '4'}>
+									<Text
+										className='text-sm/7 sm:text-base/7 lg:text-base/8'
+										data-fade={isDesktop ? '1' : '4'}
+									>
 										Contributed in several project across multiple companies such as:
 									</Text>
 									<Box className='flex flex-row gap-6' data-fade={isDesktop ? '1' : '5'}>

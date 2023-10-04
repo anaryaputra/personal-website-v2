@@ -30,7 +30,7 @@ export default function Hero() {
 						}`}
 					>
 						<Image
-							className='lg:max-w-sm xl:max-w-none'
+							className='max-w-[256px] md:max-w-sm xl:max-w-none'
 							src={profileImg}
 							alt='profile image anarya putra'
 							priority
@@ -38,7 +38,7 @@ export default function Hero() {
 						/>
 						<Box className='flex flex-col align-middle gap-5'>
 							<Heading
-								className='text-6xl xl:text-main-title font-semibold leading-115 text-center lg:text-left'
+								className='text-5xl sm:text-6xl xl:text-main-title font-semibold leading-115 text-center lg:text-left'
 								data-fade={isDesktop ? '1' : '2'}
 							>
 								Anarya
@@ -46,7 +46,7 @@ export default function Hero() {
 								Putra
 							</Heading>
 							<Text
-								className='text-base/7 lg:text-base/8 text-center lg:text-left '
+								className='text-sm/7 sm:text-base/7 lg:text-base/8 text-center lg:text-left '
 								data-fade={isDesktop ? '1' : '3'}
 							>
 								Hi, welcome to my personal website.
