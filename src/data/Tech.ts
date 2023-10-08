@@ -32,9 +32,9 @@ export const techs: Techs = {
 			logoUrl: '/img/logo/bootstrap.svg',
 		},
 		{
-			name: 'Tailwind',
-			code: 'tailwind',
-			logoUrl: '/img/logo/tailwind.svg',
+			name: 'Tailwind CSS',
+			code: 'tailwind-css',
+			logoUrl: '/img/logo/tailwind-css.svg',
 		},
 		{
 			name: 'Material UI',
@@ -62,17 +62,17 @@ export const techs: Techs = {
 			logoUrl: '/img/logo/jquery.svg',
 		},
 		{
-			name: 'React',
+			name: 'React.js',
 			code: 'react',
 			logoUrl: '/img/logo/react.svg',
 		},
 		{
-			name: 'Next',
+			name: 'Next.js',
 			code: 'next',
 			logoUrl: '/img/logo/next.svg',
 		},
 		{
-			name: 'Express',
+			name: 'Express.js',
 			code: 'express',
 			logoUrl: '/img/logo/express.svg',
 		},
@@ -112,7 +112,7 @@ export const techs: Techs = {
 			logoUrl: '/img/logo/graphql.svg',
 		},
 		{
-			name: 'git',
+			name: 'Git',
 			code: 'git',
 			logoUrl: '/img/logo/git.svg',
 		},

@@ -9,9 +9,6 @@ const config: Config = {
 	important: '#__next',
 	theme: {
 		extend: {
-			aspectRatio: {
-				'4/3': '380 / 237',
-			},
 			backgroundColor: {
 				'green-accent': '#90FF01',
 			},
@@ -21,6 +18,9 @@ const config: Config = {
 			},
 			colors: {
 				'green-accent': '#90FF01',
+			},
+			transitionDuration: {
+				'400': '400ms',
 			},
 			fontSize: {
 				'main-title': '7.5938rem',
