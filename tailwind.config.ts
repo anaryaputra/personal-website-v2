@@ -19,6 +19,9 @@ const config: Config = {
 			colors: {
 				'green-accent': '#90FF01',
 			},
+			transitionDuration: {
+				'400': '400ms',
+			},
 			fontSize: {
 				'main-title': '7.5938rem',
 			},

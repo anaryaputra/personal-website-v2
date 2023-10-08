@@ -10,7 +10,7 @@ type NavbarProps = {
 
 export default function Navbar({ links = { links: [], total_links: 0 }, ...props }: NavbarProps) {
 	return (
-		<AppBar id='navbar' position='sticky' sx={{ background: '#000' }} {...props}>
+		<AppBar id='navbar' className='py-4' position='sticky' sx={{ background: '#000' }} {...props}>
 			<Container className='max-w-[1440px] p-0'>
 				<Toolbar className='flex flex-row justify-between p-0'>
 					<Logo className='w-[48px] lg:w-[64px]' variant='app' />

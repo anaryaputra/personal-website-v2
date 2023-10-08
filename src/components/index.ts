@@ -7,7 +7,11 @@ export { default as TechBadge } from '@/components/Badge/TechBadge/TechBadge';
 /**
  * CARD COMPONENTS
  */
+export { default as Card } from '@/components/Card/Card/Card';
+export { default as CardContent } from '@/components/Card/CardContent/CardContent';
+export { default as CardMedia } from '@/components/Card/CardMedia/CardMedia';
 export { default as ExperienceCard } from '@/components/Card/ExperienceCard/ExperienceCard';
+export { default as ProjectCard } from '@/components/Card/ProjectCard/ProjectCard';
 
 /**
  * CAROUSEL COMPONENTS
@@ -77,12 +81,18 @@ export { default as NavbarMenu } from '@/components/Navbar/NavbarMenu/NavbarMenu
  */
 export { default as AboutMe } from '@/components/Section/Index/AboutMe/AboutMe';
 export { default as Hero } from '@/components/Section/Index/Hero/Hero';
+export { default as Portfolio } from '@/components/Section/Index/Portfolio/Portfolio';
 export { default as Specialization } from '@/components/Section/Index/Specialization/Specialization';
 
 /**
  * SEPARATOR COMPONENTS
  */
 export { default as Separator } from '@/components/Separator/Separator';
+
+/**
+ * TOOLTIP COMPONENTS
+ */
+export { default as DarkTooltip } from '@/components/Tooltip/DarkTooltip/DarkTooltip';
 
 /**
  * TYPOGRAPHY COMPONENTS

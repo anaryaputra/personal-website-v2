@@ -1,6 +1,6 @@
 import { landingPageLinks } from '@/data/LandingPageLinks';
 
-import { AboutMe, Hero, Navbar, Page, Specialization } from '@/components';
+import { AboutMe, Hero, Navbar, Page, Portfolio, Specialization } from '@/components';
 
 import { Box } from '@mui/material';
 
@@ -23,6 +23,7 @@ export default function Home() {
 				<Box className='flex flex-col gap-y-64 py-64'>
 					<AboutMe />
 					<Specialization />
+					<Portfolio />
 				</Box>
 			</Page>
 		</Fragment>

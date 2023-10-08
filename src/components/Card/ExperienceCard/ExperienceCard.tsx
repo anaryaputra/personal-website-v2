@@ -2,9 +2,12 @@ import { Heading, Text, TransitionsModal } from '@/components';
 
 import { Experience } from '@/data/Experiences';
 
-import { Box, Card, CardActions, CardContent } from '@mui/material';
+import { Box, CardActions } from '@mui/material';
 
 import Image from 'next/image';
+import Card from '../Card/Card';
+import CardMedia from '../CardMedia/CardMedia';
+import CardContent from '../CardContent/CardContent';
 
 export default function ExperienceCard({
 	description,
@@ -16,30 +19,32 @@ export default function ExperienceCard({
 	start_date,
 }: Experience) {
 	return (
-		<Card className='flex flex-col flex-1 basis-full justify-between items-center p-8 min-h-full bg-[#111111] shadow-lg rounded-lg text-white lg:max-w-[48%]'>
-			<CardContent className='flex flex-col flex-1 justify-between items-center gap-8'>
+		<Card className='h-full w-full items-center bg-[#111111]'>
+			<CardMedia>
 				<Image
 					alt={`${institution} logo`}
-					className='w-16 h-16 object-cover rounded-full bg-white p-1'
+					className='h-16 w-16 rounded-full bg-white object-cover p-1'
 					height={64}
 					width={64}
 					src={`/img/${logo}`}
 				/>
+			</CardMedia>
+			<CardContent className='h-full'>
 				<Box className='flex flex-col text-center'>
-					<Heading className='text-lg/7 lg:text-lg/8 font-semibold'>{institution}</Heading>
-					<Heading className='text-base/7 lg:text-base/8 font-medium'>{role}</Heading>
+					<Heading className='text-lg/7 font-semibold lg:text-lg/8'>{institution}</Heading>
+					<Heading className='text-base/7 font-medium lg:text-base/8'>{role}</Heading>
 				</Box>
-				<Box className='flex flex-col gap-4'>
-					<Text className='text-sm/7 sm:text-base/7 lg:text-base/8 text-center'>{description}</Text>
+				<Box className='flex h-full flex-col justify-between gap-4'>
+					<Text className='text-center text-sm/7 sm:text-base/7 lg:text-base/8'>{description}</Text>
+					<Text className='text-center text-sm/7 lg:text-sm/8'>{`${start_date} - ${end_date}`}</Text>
 				</Box>
-				<Text className='text-sm/7 lg:text-sm/8 text-center'>{`${start_date} - ${end_date}`}</Text>
 			</CardContent>
 			<CardActions className='w-full'>
 				<TransitionsModal buttonText='Find More Details'>
-					<Box className='flex flex-col justify-center align-middle items-center gap-8 w-full'>
+					<Box className='flex w-full flex-col items-center justify-center gap-8 align-middle'>
 						<Image
 							alt={`${institution} logo`}
-							className='w-16 h-16 object-cover rounded-full bg-white p-1'
+							className='h-16 w-16 rounded-full bg-white object-cover p-1'
 							height={64}
 							width={64}
 							src={`/img/${logo}`}
@@ -56,7 +61,7 @@ export default function ExperienceCard({
 									</li>
 								))}
 							</ol>
-							<Text className='text-sm/7 text-right lg:text-sm/8'>{`${start_date} - ${end_date}`}</Text>
+							<Text className='text-right text-sm/7 lg:text-sm/8'>{`${start_date} - ${end_date}`}</Text>
 						</Box>
 					</Box>
 				</TransitionsModal>

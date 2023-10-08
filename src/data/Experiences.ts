@@ -65,7 +65,7 @@ export const experiences: Experiences = {
 			start_date: 'Apr 2022',
 			end_date: 'Jun 2023',
 			description: [
-				'Responsible development, day-to-day support, and ongoing maintenance of web based applications',
+				'Responsible development, day-to-day support, and ongoing maintenance of web based applications.',
 			],
 			long_description: [
 				'Develop web applications based on Magento 2 (mainly) or Shopware with strong optimization and high functionality, mainly focused on e-commerce projects.',
