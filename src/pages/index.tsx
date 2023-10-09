@@ -20,7 +20,7 @@ export default function Home() {
 			<Page id='home' className={poppins.className}>
 				<Hero />
 				<Navbar links={landingPageLinks} />
-				<Box className='flex flex-col gap-y-64 py-64'>
+				<Box className='flex flex-col items-center gap-y-64 py-64'>
 					<AboutMe />
 					<Specialization />
 					<Portfolio />
