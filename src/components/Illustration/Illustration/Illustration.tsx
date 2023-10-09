@@ -10,9 +10,14 @@ const DeveloperCollaborationIllustration = dynamic(
 	{}
 );
 
+const PartnershipIllustration = dynamic(
+	() => import('@/components/Illustration/PartnershipIllustration/PartnershipIllustration'),
+	{}
+);
+
 export type IllustrationProps = {
 	className?: string | undefined;
-	variant: 'developer' | 'developer-collaboration';
+	variant: 'developer' | 'developer-collaboration' | 'partnership';
 };
 
 export default function Illustration({ className, variant }: IllustrationProps) {
@@ -21,6 +26,8 @@ export default function Illustration({ className, variant }: IllustrationProps) 
 			return <DeveloperIllustration className={className} variant={variant} />;
 		case 'developer-collaboration':
 			return <DeveloperCollaborationIllustration className={className} variant={variant} />;
+		case 'partnership':
+			return <PartnershipIllustration className={className} variant={variant} />;
 		default:
 			return;
 	}
