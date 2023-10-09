@@ -19,6 +19,9 @@ const config: Config = {
 			colors: {
 				'green-accent': '#90FF01',
 			},
+			transitionDuration: {
+				'400': '400ms',
+			},
 			fontSize: {
 				'main-title': '7.5938rem',
 			},
@@ -26,9 +29,6 @@ const config: Config = {
 				'115': '115%',
 				'125': '125%',
 				'175': '175%',
-			},
-			padding: {
-				page: '0 9.027%',
 			},
 		},
 	},

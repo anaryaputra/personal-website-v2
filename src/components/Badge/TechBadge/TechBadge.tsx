@@ -13,7 +13,7 @@ type TechBadgeProps = {
 export default function TechBadge({ className, data: { code, logoUrl, name }, ...props }: TechBadgeProps) {
 	return (
 		<Badge className={className} {...props}>
-			<Image src={logoUrl} alt={`${code} logo`} height={16} width={16} />
+			<Image className='w-auto h-auto max-h-4' src={logoUrl} alt={`${code} logo`} height={16} width={16} />
 			<Text>{name}</Text>
 		</Badge>
 	);

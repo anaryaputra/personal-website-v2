@@ -1,6 +1,6 @@
 import { landingPageLinks } from '@/data/LandingPageLinks';
 
-import { AboutMe, Hero, Navbar, Page, Specialization } from '@/components';
+import { AboutMe, Hero, HireMe, Navbar, Page, Portfolio, Specialization } from '@/components';
 
 import { Box } from '@mui/material';
 
@@ -20,9 +20,11 @@ export default function Home() {
 			<Page id='home' className={poppins.className}>
 				<Hero />
 				<Navbar links={landingPageLinks} />
-				<Box className='flex flex-col gap-y-64 py-64'>
+				<Box className='flex flex-col items-center gap-y-64 py-64'>
 					<AboutMe />
 					<Specialization />
+					<Portfolio />
+					<HireMe />
 				</Box>
 			</Page>
 		</Fragment>
