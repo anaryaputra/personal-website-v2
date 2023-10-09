@@ -30,9 +30,6 @@ const config: Config = {
 				'125': '125%',
 				'175': '175%',
 			},
-			padding: {
-				page: '0 9.027%',
-			},
 		},
 	},
 	plugins: [],

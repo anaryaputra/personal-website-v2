@@ -89,16 +89,18 @@ function Body() {
 							<Illustration className='max-h-[256px]' variant='partnership' />
 						</Box>
 						<Box className='flex flex-col items-center justify-center gap-8 align-middle'>
-							<Button
-								className='hover:bg-white hover:text-black'
-								color='inherit'
-								data-fade='2'
-								onClick={handleSendEmail}
-								startIcon={<MailOutline />}
-								variant='outlined'
-							>
-								Send me an email
-							</Button>
+							<Box data-fade='2'>
+								<Button
+									className='hover:bg-white hover:text-black'
+									color='inherit'
+									// data-fade='2'
+									onClick={handleSendEmail}
+									startIcon={<MailOutline />}
+									variant='outlined'
+								>
+									Send me an email
+								</Button>
+							</Box>
 							<DarkTooltip
 								placement='bottom-end'
 								title={isCopied ? 'Copied' : 'Click to copy'}
@@ -132,7 +134,7 @@ function Footer() {
 		<InView onChange={setInView}>
 			{({ ref }) => (
 				<div className={clsx({ 'fade-in-start': shouldFade })} ref={ref}>
-					<SectionFooter direction='col' gap={4}>
+					<SectionFooter className='gap-4' direction='col'>
 						<Box className='flex flex-row justify-center gap-4' data-fade='1'>
 							<Link
 								className='transition-all duration-500 hover:text-green-accent'

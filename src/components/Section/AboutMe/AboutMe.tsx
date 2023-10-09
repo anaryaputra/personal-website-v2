@@ -247,7 +247,13 @@ function Footer() {
 		<InView onChange={setInView}>
 			{({ ref }) => (
 				<div className={`${shouldFade && 'fade-in-start'}`} ref={ref}>
-					<SectionFooter id='about-me__footer' className='justify-between' direction='row' data-fade='1'>
+					<SectionFooter
+						id='about-me__footer'
+						className='justify-between'
+						direction='row'
+						data-fade='1'
+						gap={16}
+					>
 						<Separator className='hidden lg:flex lg:flex-1' />
 						<Button
 							className='w-full border-white font-medium text-white hover:bg-white hover:text-black lg:max-w-[13.5rem]'

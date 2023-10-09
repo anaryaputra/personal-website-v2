@@ -7,18 +7,9 @@ type SectionFooterProps = {
 	gap?: number | string;
 } & ComponentPropsWithoutRef<'footer'>;
 
-export default function SectionFooter({
-	children,
-	className,
-	direction = 'row',
-	gap = 16,
-	...props
-}: SectionFooterProps) {
+export default function SectionFooter({ children, className, direction = 'row', ...props }: SectionFooterProps) {
 	return (
-		<footer
-			className={`${styles.sectionFooter} ${direction === 'col' && 'flex-col'} gap-${gap} ${className}`}
-			{...props}
-		>
+		<footer className={`${styles.sectionFooter} ${direction === 'col' && 'flex-col'} ${className}`} {...props}>
 			{children}
 		</footer>
 	);
