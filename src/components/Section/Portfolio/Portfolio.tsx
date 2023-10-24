@@ -1,110 +1,159 @@
-import { Heading, ProjectCard, Section, SectionBody, SectionHeader } from '@/components';
-
-import { selectedProjects as selectedProjectsData } from '@/data/Projects';
-
+/**
+ * Module Imports
+ */
+/** Components */
+import { Heading, ProjectCard, Section, SectionBody, SectionHeader, Subheading, Text } from '@/components';
+/** Contexts */
+import { useIsDesktopContext } from '@/contexts';
+/** Hooks */
 import { useFade, useLoaded } from '@/hooks';
-
+/** Types */
+import { Project } from '@/types';
+/** Material UI */
 import { Box } from '@mui/material';
-
-import { useState } from 'react';
+/** React */
+import React from 'react';
+/** React Intersection */
 import { InView } from 'react-intersection-observer';
 
-export default function Portfolio() {
-	return (
-		<Section id='portfolio' className='flex-col'>
-			<Header />
-			<SectionBody direction='col'>
-				<CollaborativeWorks />
-				<SoloWorks />
-			</SectionBody>
-		</Section>
-	);
+/**
+ * Interface Declarations
+ */
+interface PortfolioProps {
+	data: Project[];
 }
 
-function Header() {
-	const [inView, setInView] = useState(false);
-	const isLoaded = useLoaded({ inView });
-	const shouldFade = useFade({ inView, isLoaded });
+/**
+ * Components
+ */
+const Portfolio = ({ data }: PortfolioProps): React.JSX.Element => (
+	<Section id='portfolio' className='flex-col'>
+		<Header />
+		<SectionBody id='portfolio__body' direction='col'>
+			<CollaborativeWorks data={data} />
+			<SoloWorks data={data} />
+		</SectionBody>
+	</Section>
+);
+
+export default Portfolio;
+
+const Header = (): React.JSX.Element => {
+	const [inView, setInView] = React.useState<boolean>(false);
+
+	const isLoaded: boolean = useLoaded({ inView });
+	const shouldFade: boolean = useFade({ inView, isLoaded });
+	const isDesktop: boolean = useIsDesktopContext();
 
 	return (
 		<InView onChange={setInView}>
 			{({ ref }) => (
 				<div className={`${shouldFade && 'fade-in-start'}`} ref={ref}>
-					<SectionHeader>
-						<Heading className='text-center text-4xl font-bold lg:text-right lg:text-6xl' data-fade='1'>
-							Portfolio
+					<SectionHeader id='portfolio__header' className='items-middle'>
+						<Heading data-fade='1'>
+							<span className='text-green-accent'>Featured</span> Works
 						</Heading>
-						<Heading className='text-center font-medium lg:text-right lg:text-xl' data-fade='2'>
-							A collection of my selected <span className='text-green-accent'>solo</span> and{' '}
-							<span className='text-green-accent'>collaborative works</span> as a{' '}
-							<span>software engineer</span>
-						</Heading>
+						<Text className='text-wrap-balance text-xl font-medium' data-fade={isDesktop ? '1' : '2'}>
+							{'Dive into a collections of '}
+							<span className='text-green-accent'>featured</span>
+							{" works I've done "}
+							<span className='text-green-accent'>collaboratively</span>
+							{' and '}
+							<span className='text-green-accent'>personally</span>
+						</Text>
 					</SectionHeader>
 				</div>
 			)}
 		</InView>
 	);
-}
+};
 
-function CollaborativeWorks() {
-	const [inView, setInView] = useState(false);
-	const isLoaded = useLoaded({ inView });
-	const shouldFade = useFade({ inView, isLoaded });
+const CollaborativeWorks = ({ data }: PortfolioProps): React.JSX.Element => {
+	const [inView, setInView] = React.useState<boolean>(false);
 
-	return (
-		<InView onChange={setInView}>
-			{({ ref }) => (
-				<div className={`${shouldFade && 'fade-in-start'}`} ref={ref}>
-					<Box className='flex flex-col gap-12'>
-						<Box className='flex flex-col'>
-							<Heading className='text-base/7 font-bold text-green-accent lg:text-base/8' data-fade='1'>
-								Collaborative Works
-							</Heading>
-							<Heading className='text-base/7 lg:text-base/8' data-fade='1'>
-								Collaborative projects I was involved in
-							</Heading>
-						</Box>
-						<Box className='flex w-full flex-row flex-wrap gap-5' data-fade='2'>
-							{selectedProjectsData.collaborative.projects.map((project, index) => (
-								<ProjectCard key={`collaborative-work-${index}`} data={project} />
-							))}
-						</Box>
-					</Box>
-				</div>
-			)}
-		</InView>
-	);
-}
+	const isLoaded: boolean = useLoaded({ inView });
+	const shouldFade: boolean = useFade({ inView, isLoaded });
+	const isDesktop: boolean = useIsDesktopContext();
 
-function SoloWorks() {
-	const [inView, setInView] = useState(false);
-	const isLoaded = useLoaded({ inView });
-	const shouldFade = useFade({ inView, isLoaded });
+	const collaborativeProjects: Project[] = data.filter((project) => project.attributes.type === 'collaborative');
 
 	return (
 		<InView onChange={setInView}>
 			{({ ref }) => (
 				<div className={`${shouldFade && 'fade-in-start'}`} ref={ref}>
 					<Box className='flex flex-col gap-12'>
-						<Box className='flex flex-col'>
-							<Heading
-								className='text-right text-base/7 font-bold text-green-accent lg:text-base/8'
-								data-fade='1'
+						<Box className='grid grid-cols-1 gap-12 lg:grid-cols-3' dir='rtl' data-fade='2'>
+							<Box className='col-span-1 flex flex-col gap-1 lg:gap-2' dir='ltr'>
+								<Subheading data-fade='1'>
+									<span className='text-green-accent'>Collaborative</span>
+									<br />
+									Works
+								</Subheading>
+								<Text
+									className='text-wrap-balance text-base font-medium lg:text-lg'
+									data-fade={isDesktop ? '1' : '2'}
+								>
+									<span className='text-green-accent'>Collaborative</span> projects I was involved in
+								</Text>
+							</Box>
+							<Box
+								className='col-span-1 grid grid-cols-1 gap-5 lg:col-span-2 lg:grid-cols-2'
+								dir='ltr'
+								data-fade={isDesktop ? '1' : '3'}
 							>
-								Solo Works
-							</Heading>
-							<Heading className='text-right text-base/7 lg:text-base/8' data-fade='1'>
-								Personal projects I've been worked on
-							</Heading>
-						</Box>
-						<Box className='flex w-full flex-row-reverse flex-wrap gap-5' data-fade='2'>
-							{selectedProjectsData.solo.projects.map((project, index) => (
-								<ProjectCard key={`solo-work-${index}`} data={project} />
-							))}
+								{collaborativeProjects.map((project, index) => (
+									<ProjectCard key={`collaborative-work-${index}`} data={project} />
+								))}
+							</Box>
 						</Box>
 					</Box>
 				</div>
 			)}
 		</InView>
 	);
-}
+};
+
+const SoloWorks = ({ data }: PortfolioProps): React.JSX.Element => {
+	const [inView, setInView] = React.useState<boolean>(false);
+
+	const isLoaded: boolean = useLoaded({ inView });
+	const shouldFade: boolean = useFade({ inView, isLoaded });
+	const isDesktop: boolean = useIsDesktopContext();
+
+	const soloProjects: Project[] = data.filter((project) => project.attributes.type === 'solo');
+
+	return (
+		<InView onChange={setInView}>
+			{({ ref }) => (
+				<div className={`${shouldFade && 'fade-in-start'}`} ref={ref}>
+					<Box className='flex flex-col gap-12'>
+						<Box className='grid grid-cols-1 gap-12 lg:grid-cols-3'>
+							<Box className='col-span-1 flex flex-col gap-2'>
+								<Subheading data-fade='1'>
+									<span className='text-green-accent'>Personal</span>
+									<br />
+									Works
+								</Subheading>
+								<Text
+									className='text-wrap-balance text-base font-semibold lg:text-lg'
+									data-fade={isDesktop ? '1' : '2'}
+								>
+									<span className='text-green-accent'>Personal</span>
+									{" projects I've been worked on"}
+								</Text>
+							</Box>
+							<Box
+								className='col-span-1 grid grid-cols-1 gap-5 lg:col-span-2 lg:grid-cols-2'
+								data-fade={isDesktop ? '1' : '3'}
+							>
+								{soloProjects.map((project, index) => (
+									<ProjectCard key={`solo-work-${index}`} data={project} />
+								))}
+							</Box>
+						</Box>
+					</Box>
+				</div>
+			)}
+		</InView>
+	);
+};

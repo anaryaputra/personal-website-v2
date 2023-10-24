@@ -17,6 +17,13 @@ body {
 }
 
 @layer utilities {
+	/*
+	 * Animations
+	 */
+	.animate {
+		@apply transition-all duration-200;
+	}
+	/* Fade In */
 	[data-fade] {
 		@apply translate-y-10 opacity-0 transition duration-1000 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100;
 	}
@@ -24,33 +31,45 @@ body {
 		@apply translate-y-0 opacity-100;
 	}
 	.fade-in-start [data-fade='1'] {
-		transition-delay: 100ms;
+		@apply delay-100;
 	}
 	.fade-in-start [data-fade='2'] {
-		transition-delay: 200ms;
+		@apply delay-200;
 	}
 	.fade-in-start [data-fade='3'] {
-		transition-delay: 300ms;
+		@apply delay-300;
 	}
 	.fade-in-start [data-fade='4'] {
-		transition-delay: 400ms;
+		@apply delay-400;
 	}
 	.fade-in-start [data-fade='5'] {
-		transition-delay: 500ms;
+		@apply delay-500;
 	}
 	.fade-in-start [data-fade='6'] {
-		transition-delay: 600ms;
+		@apply delay-600;
 	}
 	.fade-in-start [data-fade='7'] {
-		transition-delay: 700ms;
+		@apply delay-700;
 	}
 	.fade-in-start [data-fade='8'] {
-		transition-delay: 800ms;
+		@apply delay-800;
 	}
 	.fade-in-start [data-fade='9'] {
-		transition-delay: 900ms;
+		@apply delay-900;
+	}
+	/* Scale Up */
+	.animate-scale-up {
+		@apply hover:scale-105;
+	}
+	/* Growing Underline */
+	.animate-underline {
+		@apply relative before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-current before:opacity-0 before:transition-all before:duration-500 before:content-[""] hover:before:w-full hover:before:opacity-100;
 	}
 
+	/*
+	 * Typography
+	 */
+	/* Whitespace */
 	.text-wrap-balance {
 		text-wrap: balance;
 	}

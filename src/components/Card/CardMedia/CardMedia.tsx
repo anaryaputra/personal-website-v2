@@ -1,27 +1,28 @@
-import styles from './card-media.module.scss';
+/**
+ * Import Modules
+ */
+/** Components */
+import { AdvancedImage, CloudinaryImageProps, NextImageProps } from '@/components';
+/** React */
+import React from 'react';
 
-import { Box } from '@mui/material';
-
-import { ComponentPropsWithoutRef } from 'react';
-
+/**
+ * Type Declarations
+ */
 type CardMediaProps = {
-	height?: number | string;
-	src?: string;
-	width?: number | string;
-} & ComponentPropsWithoutRef<'div'>;
+	children?: React.ReactNode;
+} & CloudinaryImageProps &
+	NextImageProps;
 
-export default function CardMedia({ children, className, height, src, width, ...props }: CardMediaProps) {
+/**
+ * Component
+ */
+const CardMedia = ({ children, fallback, src, variant, ...props }: CardMediaProps): React.JSX.Element => {
 	return children ? (
-		children
+		<React.Fragment>{children}</React.Fragment>
 	) : (
-		<Box
-			className={`${styles.cardMedia} ${className}`}
-			height={height}
-			style={{
-				backgroundImage: `url("${src}")`,
-			}}
-			width={width}
-			{...props}
-		/>
+		<AdvancedImage variant={variant} src={src} fallback={fallback} {...props} />
 	);
-}
+};
+
+export default CardMedia;

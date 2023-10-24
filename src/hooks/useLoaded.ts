@@ -1,13 +1,22 @@
-import { useEffect, useState } from 'react';
+/**
+ * Module Imports
+ */
+import React from 'react';
 
-type UseLaodedProps = {
+/**
+ * Interface Declarations
+ */
+interface UseLaodedProps {
 	inView: boolean;
-};
+}
 
-export default function useLoaded({ inView }: UseLaodedProps) {
-	const [isLoaded, setIsLoaded] = useState(false);
+/**
+ * useLoaded Hooks
+ */
+export const useLoaded = ({ inView }: UseLaodedProps): boolean => {
+	const [isLoaded, setIsLoaded] = React.useState<boolean>(false);
 
-	useEffect(() => {
+	React.useEffect(() => {
 		function getIsLoaded() {
 			return isLoaded;
 		}
@@ -18,4 +27,4 @@ export default function useLoaded({ inView }: UseLaodedProps) {
 	}, [inView]);
 
 	return isLoaded;
-}
+};

@@ -1,13 +1,25 @@
-import { ComponentPropsWithoutRef } from 'react';
+/**
+ * Module Imports
+ */
+/** Styles */
+import styles from './section-body.module.css';
+/** React */
+import React from 'react';
 
+/**
+ * Type Declarations
+ */
 type SectionBodyProps = {
 	direction?: 'col' | 'row';
-} & ComponentPropsWithoutRef<'section'>;
+} & React.ComponentPropsWithoutRef<'section'>;
 
-export default function SectionBody({ children, className, direction = 'row', ...props }: SectionBodyProps) {
-	return (
-		<section className={`flex flex-${direction} gap-24 w-full`} {...props}>
-			{children}
-		</section>
-	);
-}
+/**
+ * Component
+ */
+const SectionBody = ({ children, className, direction = 'row', ...props }: SectionBodyProps): React.JSX.Element => (
+	<section className={`${styles.sectionBody} flex-${direction} ${className}`} {...props}>
+		{children}
+	</section>
+);
+
+export default SectionBody;

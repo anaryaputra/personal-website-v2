@@ -1,22 +1,32 @@
+/**
+ * Module Imports
+ */
+/** Components */
 import { Heading } from '@/components';
-
+/** Material UI */
 import { Box } from '@mui/material';
+/** React */
+import React from 'react';
 
-import { ComponentPropsWithoutRef } from 'react';
-
+/**
+ * Type Declarations
+ */
 type CounterProps = {
 	count?: number;
 	label?: string;
-} & ComponentPropsWithoutRef<'div'>;
+} & React.ComponentPropsWithoutRef<'div'>;
 
-export default function Counter({ className, count, label, ...props }: CounterProps) {
-	return (
-		<Box className={`flex flex-col ${className}`} {...props}>
-			<Heading className='text-2xl lg:text-3xl font-bold'>
-				{count}
-				<sup className='text-green-accent'>+</sup>
-			</Heading>
-			<Heading className='text-xl lg:text-2xl font-semibold'>{label}</Heading>
-		</Box>
-	);
-}
+/**
+ * Component
+ */
+const Counter = ({ className, count, label, ...props }: CounterProps): React.JSX.Element => (
+	<Box className={`flex flex-col ${className}`} {...props}>
+		<Heading className='text-2xl lg:text-3xl'>
+			{count}
+			<sup className='text-green-accent'>+</sup>
+		</Heading>
+		<Heading className='text-xl font-semibold lg:text-2xl'>{label}</Heading>
+	</Box>
+);
+
+export default Counter;

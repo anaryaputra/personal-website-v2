@@ -1,11 +1,18 @@
-import styles from './section.module.scss';
+/**
+ * Module Imports
+ */
+/** Styles */
+import styles from './section.module.css';
+/** React */
+import React from 'react';
 
-import { ComponentPropsWithRef } from 'react';
+/**
+ * Component
+ */
+const Section = ({ children, className, ...props }: React.ComponentPropsWithoutRef<'section'>): React.JSX.Element => (
+	<section className={`${styles.section} ${className} scroll-mt-28`} {...props}>
+		{children}
+	</section>
+);
 
-export default function Section({ children, className, ...props }: ComponentPropsWithRef<'section'>) {
-	return (
-		<section className={`${styles.section} ${className}`} {...props}>
-			{children}
-		</section>
-	);
-}
+export default Section;

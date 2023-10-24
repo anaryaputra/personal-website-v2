@@ -1,33 +1,22 @@
-import { Heading } from '@/components';
-import { ComponentPropsWithoutRef } from 'react';
+/**
+ * Module Imports
+ */
+/** Styles */
+import styles from './section-header.module.css';
+/** React */
+import React from 'react';
 
-type SectionHeaderProps = {
-	align?: 'left' | 'center' | 'right';
-	subtitle?: string;
-	title?: string;
-} & ComponentPropsWithoutRef<'header'>;
-
-export default function SectionHeader({
-	align = 'left',
+/**
+ * Component
+ */
+const SectionHeader = ({
 	children,
-	className,
-	subtitle,
-	title,
+	className = '',
 	...props
-}: SectionHeaderProps) {
-	return (
-		<header className={`flex flex-col gap-4 w-full ${className}`} {...props}>
-			{!children && title && (
-				<Heading className={`text-4xl lg:text-6xl font-bold text-center ${align && `lg:text-${align}`}`}>
-					{title}
-				</Heading>
-			)}
-			{!children && subtitle && (
-				<Heading className={`lg:text-xl font-medium text-center ${align && `lg:text-${align}`}`}>
-					{subtitle}
-				</Heading>
-			)}
-			{children && children}
-		</header>
-	);
-}
+}: React.ComponentPropsWithoutRef<'header'>): React.JSX.Element => (
+	<header className={`${styles.sectionHeader} ${className}`} {...props}>
+		{children}
+	</header>
+);
+
+export default SectionHeader;

@@ -1,16 +1,26 @@
-import styles from './section-footer.module.scss';
+/**
+ * Module Declarations
+ */
+/** Styles */
+import styles from './section-footer.module.css';
+/** React */
+import React from 'react';
 
-import { ComponentPropsWithoutRef } from 'react';
-
+/**
+ * Type Declarations
+ */
 type SectionFooterProps = {
 	direction?: 'row' | 'col';
 	gap?: number | string;
-} & ComponentPropsWithoutRef<'footer'>;
+} & React.ComponentPropsWithoutRef<'footer'>;
 
-export default function SectionFooter({ children, className, direction = 'row', ...props }: SectionFooterProps) {
-	return (
-		<footer className={`${styles.sectionFooter} ${direction === 'col' && 'flex-col'} ${className}`} {...props}>
-			{children}
-		</footer>
-	);
-}
+/**
+ * Component
+ */
+const SectionFooter = ({ children, className, direction = 'row', ...props }: SectionFooterProps): React.JSX.Element => (
+	<footer className={`${styles.sectionFooter} ${direction === 'col' && 'flex-col'} ${className}`} {...props}>
+		{children}
+	</footer>
+);
+
+export default SectionFooter;

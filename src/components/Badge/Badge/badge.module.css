@@ -1,0 +1,3 @@
+.badge {
+	@apply flex min-w-max flex-1 content-center items-center justify-center gap-2 whitespace-nowrap;
+}

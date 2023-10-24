@@ -1,0 +1,3 @@
+.subheading {
+	@apply text-3xl font-semibold lg:text-5xl;
+}
