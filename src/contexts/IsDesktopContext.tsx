@@ -1,18 +1,29 @@
+/**
+ * Module Imports
+ */
+/** Material UI */
 import { useMediaQuery } from '@mui/material';
-import { ReactNode, createContext, useContext } from 'react';
+/** React */
+import React from 'react';
 
-const IsDesktopContext = createContext<boolean>(false);
+/**
+ * Interface Declarations
+ */
+interface IsDesktopProviderProps {
+	children: React.ReactNode;
+}
 
-type IsDesktopProviderProps = {
-	children: ReactNode;
-};
+/**
+ * Context
+ */
+const IsDesktopContext = React.createContext<boolean>(false);
 
-export function IsDesktopProvider({ children }: IsDesktopProviderProps) {
-	const isDesktop = useMediaQuery('(min-width:1024px)');
+export const IsDesktopProvider = ({ children }: IsDesktopProviderProps): React.JSX.Element => {
+	const isDesktop: boolean = useMediaQuery('(min-width:1024px)');
 
 	return <IsDesktopContext.Provider value={isDesktop}>{children}</IsDesktopContext.Provider>;
-}
+};
 
-export function useIsDesktopContext() {
-	return useContext(IsDesktopContext);
-}
+export const useIsDesktopContext = (): boolean => {
+	return React.useContext(IsDesktopContext);
+};

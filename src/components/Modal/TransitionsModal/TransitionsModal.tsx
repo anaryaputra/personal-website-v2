@@ -1,22 +1,33 @@
+/**
+ * Module Imports
+ */
+/** Components */
 import { Button } from '@/components';
-
+/** Material UI */
 import { Backdrop, Box, Fade, Modal } from '@mui/material';
+/** React */
+import React from 'react';
 
-import { PropsWithChildren, useState } from 'react';
-
-type TransitionsModalProps = {
+/**
+ * Interface Declarations
+ */
+interface TransitionsModalProps extends React.PropsWithChildren {
 	buttonText: string;
-} & PropsWithChildren;
+}
 
-export default function TransitionsModal({ buttonText = 'Button', children, ...props }: TransitionsModalProps) {
-	const [open, setOpen] = useState(false);
-	const handleOpen = () => setOpen(true);
-	const handleClose = () => setOpen(false);
+/**
+ * Components
+ */
+const TransitionsModal = ({ buttonText = 'Button', children, ...props }: TransitionsModalProps): React.JSX.Element => {
+	const [open, setOpen] = React.useState<boolean>(false);
+
+	const handleOpen = (): void => setOpen(true);
+	const handleClose = (): void => setOpen(false);
 
 	return (
 		<Box className='w-full' {...props}>
 			<Button
-				className='w-full hover:bg-white hover:text-black '
+				className='w-full hover:bg-white hover:text-black'
 				color='inherit'
 				variant='outlined'
 				onClick={handleOpen}
@@ -44,4 +55,6 @@ export default function TransitionsModal({ buttonText = 'Button', children, ...p
 			</Modal>
 		</Box>
 	);
-}
+};
+
+export default TransitionsModal;

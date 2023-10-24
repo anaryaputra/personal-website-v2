@@ -1,0 +1,3 @@
+.text {
+	@apply text-sm sm:text-base lg:text-base;
+}

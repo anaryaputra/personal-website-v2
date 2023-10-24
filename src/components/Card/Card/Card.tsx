@@ -1,13 +1,22 @@
-import styles from './card.module.scss';
-
+/**
+ * Module Imports
+ */
+/** Styles */
+import styles from './card.module.css';
+/** Material UI */
 import { Box } from '@mui/material';
+/** React */
+import React from 'react';
 
-import { ComponentPropsWithoutRef } from 'react';
-
-export default function Card({ children, className, ...props }: ComponentPropsWithoutRef<'div'>) {
-	return (
-		<Box className={`${styles.card} ${className}`} {...props}>
+/**
+ * Component
+ */
+const Card = React.forwardRef(
+	({ children, className, ...props }: React.ComponentPropsWithRef<'div'>, ref): React.JSX.Element => (
+		<Box className={`${styles.card} ${className}`} ref={ref} {...props}>
 			{children}
 		</Box>
-	);
-}
+	)
+);
+
+export default Card;

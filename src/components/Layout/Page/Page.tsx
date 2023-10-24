@@ -1,11 +1,18 @@
-import styles from './page.module.scss';
+/**
+ * Module Imports
+ */
+/** Styles */
+import styles from './page.module.css';
+/** React */
+import React from 'react';
 
-import { ComponentPropsWithoutRef } from 'react';
+/**
+ * Component
+ */
+const Page = ({ children, className, ...props }: React.ComponentPropsWithoutRef<'main'>): React.JSX.Element => (
+	<main className={`${styles.page} ${className}`} {...props}>
+		{children}
+	</main>
+);
 
-export default function Page({ children, className, ...props }: ComponentPropsWithoutRef<'main'>) {
-	return (
-		<main className={`${styles.page} ${className}`} {...props}>
-			{children}
-		</main>
-	);
-}
+export default Page;

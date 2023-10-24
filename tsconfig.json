@@ -21,10 +21,11 @@
 			"@/data/*": ["./src/data/*"],
 			"@/hooks/*": ["./src/hooks/*"],
 			"@/styles/*": ["./src/styles/*"],
+			"@/types/*": ["./src/types/*"],
 			"@/utils/*": ["./src/utils/*"]
 		},
 		"baseUrl": "."
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "prettier.config.js"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "additional.d.ts", "prettier.config.js"],
 	"exclude": ["node_modules"]
 }

@@ -1,0 +1,3 @@
+.sectionBody {
+	@apply flex w-full gap-24;
+}

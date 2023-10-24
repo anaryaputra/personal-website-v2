@@ -2,7 +2,6 @@
  * BADGE COMPONENTS
  */
 export { default as Badge } from '@/components/Badge/Badge/Badge';
-export { default as TechBadge } from '@/components/Badge/TechBadge/TechBadge';
 
 /**
  * CARD COMPONENTS
@@ -25,24 +24,10 @@ export { default as CarouselDotButton } from '@/components/Carousel/CarouselDotB
 export { default as Counter } from '@/components/Counter/Counter';
 
 /**
- * ICON COMPONENTS & TYPES
+ * IMAGE COMPONENTS
  */
-export { default as BackendIcon } from '@/components/Icon/BackendIcon/BackendIcon';
-export { default as FrontendIcon } from '@/components/Icon/FrontendIcon/FrontendIcon';
-export { default as GraphicDesignIcon } from '@/components/Icon/GraphicDesignIcon/GraphicDesignIcon';
-export { default as Icon } from '@/components/Icon/Icon/Icon';
-export { default as PerformanceIcon } from '@/components/Icon/PerformanceIcon/PerformanceIcon';
-export { default as UiUxIcon } from '@/components/Icon/UiUxIcon/UiUxIcon';
-export type { IconProps } from '@/components/Icon/Icon/Icon';
-
-/**
- * ILLUSTRATION COMPONENTS & TYPES
- */
-export { default as DeveloperIllustration } from '@/components/Illustration/DeveloperIllustration/DeveloperIllustration';
-export { default as DeveloperCollaborationIllustration } from '@/components/Illustration/DeveloperCollaborationIllustration/DeveloperCollaborationIllustration';
-export { default as Illustration } from '@/components/Illustration/Illustration/Illustration';
-export { default as PartnershipIllustration } from '@/components/Illustration/PartnershipIllustration/PartnershipIllustration';
-export type { IllustrationProps } from '@/components/Illustration/Illustration/Illustration';
+export { default as AdvancedImage } from '@/components/Images/AdvancedImage/AdvancedImage';
+export type { CloudinaryImageProps, NextImageProps } from '@/components/Images/AdvancedImage/AdvancedImage';
 
 /**
  * INPUT COMPONENTS
@@ -59,13 +44,6 @@ export { default as SectionFooter } from '@/components/Layout/SectionFooter/Sect
 export { default as SectionHeader } from '@/components/Layout/SectionHeader/SectionHeader';
 
 /**
- * LOGO COMPONENTS & TYPES
- */
-export { default as Logo } from '@/components/Logo/Logo/Logo';
-export { default as AppLogo } from '@/components/Logo/AppLogo/AppLogo';
-export type { LogoProps } from '@/components/Logo/Logo/Logo';
-
-/**
  * MODAL COMPONENTS
  */
 export { default as TransitionsModal } from '@/components/Modal/TransitionsModal/TransitionsModal';
@@ -73,9 +51,9 @@ export { default as TransitionsModal } from '@/components/Modal/TransitionsModal
 /**
  * NAVBAR COMPONENTS
  */
-export { default as Navbar } from '@/components/Navbar/Navbar/Navbar';
-export { default as NavbarLink } from '@/components/Navbar/NavbarLink/NavbarLink';
-export { default as NavbarMenu } from '@/components/Navbar/NavbarMenu/NavbarMenu';
+export { default as Navbar } from '@/components/Nav/Navbar/Navbar';
+export { default as Navlink } from '@/components/Nav/Navlink/Navlink';
+export { default as Navmenu } from '@/components/Nav/Navmenu/Navmenu';
 
 /**
  * SECTION COMPONENTS
@@ -99,5 +77,6 @@ export { default as DarkTooltip } from '@/components/Tooltip/DarkTooltip/DarkToo
 /**
  * TYPOGRAPHY COMPONENTS
  */
-export { Heading } from '@/components/Typography/Heading/Heading';
-export { Text } from '@/components/Typography/Text/Text';
+export { default as Heading } from '@/components/Typography/Heading/Heading';
+export { default as Subheading } from '@/components/Typography/Subheading/Subheading';
+export { default as Text } from '@/components/Typography/Text/Text';

@@ -1,13 +1,20 @@
-import styles from './card-content.module.scss';
-
+/**
+ * Module Imports
+ */
+/** Styles */
+import styles from './card-content.module.css';
+/** Material UI */
 import { Box } from '@mui/material';
+/** React */
+import React from 'react';
 
-import { ComponentPropsWithoutRef } from 'react';
+/**
+ * Component
+ */
+const CardContent = ({ children, className, ...props }: React.ComponentPropsWithoutRef<'div'>): React.JSX.Element => (
+	<Box className={`${styles.cardContent} ${className}`} {...props}>
+		{children}
+	</Box>
+);
 
-export default function CardContent({ children, className, ...props }: ComponentPropsWithoutRef<'div'>) {
-	return (
-		<Box className={`${styles.cardContent} ${className}`} {...props}>
-			{children}
-		</Box>
-	);
-}
+export default CardContent;

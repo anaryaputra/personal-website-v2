@@ -1,18 +1,28 @@
-import { useEffect, useState } from 'react';
+/**
+ * Module Imports
+ */
+/** React */
+import React from 'react';
 
-type UseFadeProps = {
+/**
+ * Interface Declarations
+ */
+export interface UseFadeProps {
 	inView: boolean;
 	isLoaded: boolean;
-};
+}
 
-export default function useFade({ inView, isLoaded }: UseFadeProps) {
-	const [shouldFade, setShouldFade] = useState(false);
+/**
+ * useFade Hooks
+ */
+export const useFade = ({ inView, isLoaded }: UseFadeProps): boolean => {
+	const [shouldFade, setShouldFade] = React.useState<boolean>(false);
 
-	useEffect(() => {
+	React.useEffect(() => {
 		if (inView && !isLoaded) {
 			setShouldFade(true);
 		}
 	}, [inView]);
 
 	return shouldFade;
-}
+};

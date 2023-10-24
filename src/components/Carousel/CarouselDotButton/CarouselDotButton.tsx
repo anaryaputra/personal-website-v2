@@ -1,32 +1,44 @@
+/**
+ * Module Imports
+ */
+/** Material UI */
 import { Box } from '@mui/material';
+/** clsx */
+import clsx from 'clsx';
+/** React */
+import React from 'react';
 
-import classNames from 'classnames';
-
-type CarouselDotButtonProps = {
-	className?: string | '';
+/**
+ * Interface Declarations
+ */
+interface CarouselDotButtonProps extends React.ComponentPropsWithoutRef<'div'> {
 	itemsLength: number;
 	selectedIndex: number;
-};
+}
 
-export default function CarouselDotButton({ className, itemsLength, selectedIndex }: CarouselDotButtonProps) {
-	const arr = new Array(itemsLength).fill(0);
+/**
+ * Component
+ */
+const CarouselDotButton = ({ className, itemsLength, selectedIndex }: CarouselDotButtonProps): React.JSX.Element => {
+	const arr: number[] = new Array(itemsLength).fill(0);
 
 	return (
-		<Box className={`flex gap-1 justify-center -translate-y-5 ${className}`}>
+		<Box className={`flex -translate-y-5 justify-center gap-1 ${className}`}>
 			{arr.map((_, index) => {
 				const selected = index === selectedIndex;
 
 				return (
 					<Box
-						className={classNames({
-							'h-2 w-2 rounded-full border-2 border-green-accent bg-green-accent transition-all duration-300':
-								true,
-							'opacity-50 bg-transparent': !selected,
-						})}
+						className={clsx(
+							'h-2 w-2 rounded-full border-2 border-green-accent bg-green-accent transition-all duration-300',
+							!selected && 'bg-transparent opacity-50'
+						)}
 						key={index}
 					/>
 				);
 			})}
 		</Box>
 	);
-}
+};
+
+export default CarouselDotButton;
