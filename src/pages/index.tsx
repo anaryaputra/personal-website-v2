@@ -20,6 +20,7 @@ import { Box } from '@mui/material';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { Poppins } from 'next/font/google';
 import Head from 'next/head';
+import Script from 'next/script';
 /** React */
 import React from 'react';
 
@@ -41,6 +42,12 @@ const Home = ({
 	<React.Fragment>
 		<Head>
 			<title>Anarya Putra</title>
+			<Script
+				async
+				src='https://analytics.anaryaindika.com/script.js'
+				data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ''}
+				data-domains='anaryaindika.com'
+			/>
 		</Head>
 		<Page id='home' className={poppins.className}>
 			<Hero />
