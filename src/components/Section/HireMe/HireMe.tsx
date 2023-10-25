@@ -163,6 +163,7 @@ const Footer = (): React.JSX.Element => {
 								className='transition-all duration-500 hover:text-green-accent'
 								href='https://www.behance.net/anaryaindika'
 								target='_blank'
+								rel='noopener noreferer'
 								data-fade='1'
 							>
 								Behance
@@ -171,6 +172,7 @@ const Footer = (): React.JSX.Element => {
 								className='transition-all duration-500 hover:text-green-accent'
 								href='https://dribbble.com/anaryaputra'
 								target='_blank'
+								rel='noopener noreferer'
 								data-fade={isDesktop ? '1' : '2'}
 							>
 								Dribbble
@@ -179,6 +181,7 @@ const Footer = (): React.JSX.Element => {
 								className='transition-all duration-500 hover:text-green-accent'
 								href='https://github.com/anaryaputra'
 								target='_blank'
+								rel='noopener noreferer'
 								data-fade={isDesktop ? '1' : '3'}
 							>
 								GitHub
@@ -187,6 +190,7 @@ const Footer = (): React.JSX.Element => {
 								className='transition-all duration-500 hover:text-green-accent'
 								href='https://www.instagram.com/designbyanarya/'
 								target='_blank'
+								rel='noopener noreferer'
 								data-fade={isDesktop ? '1' : '4'}
 							>
 								Instagram
@@ -195,12 +199,24 @@ const Footer = (): React.JSX.Element => {
 								className='transition-all duration-500 hover:text-green-accent'
 								href='https://www.linkedin.com/in/anarya-putra/'
 								target='_blank'
+								rel='noopener noreferer'
 								data-fade={isDesktop ? '1' : '5'}
 							>
 								LinkedIn
 							</Link>
 						</Box>
-						<Text className='text-center' data-fade={isDesktop ? '2' : '6'}>
+						<Box className='flex items-center justify-center text-center'>
+							<Link
+								className='cursor-alias transition-all duration-400 hover:text-green-accent'
+								href='https://analytics.anaryaindika.com/share/rLENnYXcQFIccHeZ/Personal%20Website'
+								target='_blank'
+								rel='noopener noreferer'
+								data-fade={isDesktop ? '2' : '6'}
+							>
+								Analytics
+							</Link>
+						</Box>
+						<Text className='text-center' data-fade={isDesktop ? '3' : '7'}>
 							© Anarya Putra 2023. All Rights Reserved.
 						</Text>
 					</SectionFooter>
