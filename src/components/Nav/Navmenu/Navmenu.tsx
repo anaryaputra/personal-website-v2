@@ -76,7 +76,12 @@ const Navmenu = ({ className, links, ...props }: NavmenuProps): React.JSX.Elemen
 			>
 				{links.map((link, index) => (
 					<MenuItem key={`link-mobile-${index}`} onClick={handleCloseNavMenu}>
-						<Link href='#' onClick={(e) => handleNavigate({ e, link })}>
+						<Link
+							href='#'
+							onClick={(e) => handleNavigate({ e, link })}
+							data-umami-event={`Navmenu-Link: ${link.label}`}
+							data-umami-event-type='link'
+						>
 							{link.label}
 						</Link>
 					</MenuItem>

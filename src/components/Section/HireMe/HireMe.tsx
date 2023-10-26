@@ -118,6 +118,8 @@ const Body = (): React.JSX.Element => {
 									onClick={handleSendEmail}
 									startIcon={<MailOutline />}
 									variant='outlined'
+									data-umami-event='Hire Me: Send email'
+									data-umami-event-type='action'
 								>
 									Send me an email
 								</Button>
@@ -133,6 +135,8 @@ const Body = (): React.JSX.Element => {
 										data-fade='3'
 										onMouseLeave={handleLeaveCopyEmail}
 										onClick={handleCopyEmail}
+										data-umami-event='Hire Me: Copy email'
+										data-umami-event-type='action'
 									>
 										anaryaindikaputra@gmail.com
 									</Text>
@@ -165,6 +169,8 @@ const Footer = (): React.JSX.Element => {
 								target='_blank'
 								rel='noopener noreferer'
 								data-fade='1'
+								data-umami-event='Footer Link: Behance'
+								data-umami-event-type='link'
 							>
 								Behance
 							</Link>
@@ -174,6 +180,8 @@ const Footer = (): React.JSX.Element => {
 								target='_blank'
 								rel='noopener noreferer'
 								data-fade={isDesktop ? '1' : '2'}
+								data-umami-event='Footer Link: Dribbble'
+								data-umami-event-type='link'
 							>
 								Dribbble
 							</Link>
@@ -183,6 +191,8 @@ const Footer = (): React.JSX.Element => {
 								target='_blank'
 								rel='noopener noreferer'
 								data-fade={isDesktop ? '1' : '3'}
+								data-umami-event='Footer Link: GitHub'
+								data-umami-event-type='link'
 							>
 								GitHub
 							</Link>
@@ -192,6 +202,8 @@ const Footer = (): React.JSX.Element => {
 								target='_blank'
 								rel='noopener noreferer'
 								data-fade={isDesktop ? '1' : '4'}
+								data-umami-event='Footer Link: Instagram'
+								data-umami-event-type='link'
 							>
 								Instagram
 							</Link>
@@ -201,6 +213,8 @@ const Footer = (): React.JSX.Element => {
 								target='_blank'
 								rel='noopener noreferer'
 								data-fade={isDesktop ? '1' : '5'}
+								data-umami-event='Footer Link: LinkedIn'
+								data-umami-event-type='link'
 							>
 								LinkedIn
 							</Link>
@@ -212,6 +226,8 @@ const Footer = (): React.JSX.Element => {
 								target='_blank'
 								rel='noopener noreferer'
 								data-fade={isDesktop ? '2' : '6'}
+								data-umami-event='Footer Link: Analytics'
+								data-umami-event-type='link'
 							>
 								Analytics
 							</Link>
