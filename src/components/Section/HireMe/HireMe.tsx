@@ -229,7 +229,7 @@ const Footer = (): React.JSX.Element => {
 						</Box>
 						<Box className='flex items-center justify-center text-center' data-fade='2'>
 							<Link
-								className='cursor-alias transition-all duration-400 hover:text-green-accent'
+								className='animate animate-underline cursor-alias'
 								href='https://analytics.anaryaindika.com/share/rLENnYXcQFIccHeZ/Personal%20Website'
 								target='_blank'
 								rel='noopener noreferer'
