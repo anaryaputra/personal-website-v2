@@ -41,6 +41,11 @@ const Home = ({
 	<React.Fragment>
 		<Head>
 			<title>Anarya Putra</title>
+			<meta
+				name='description'
+				content='A portfolio website made by Anarya Putra to showcase my works and a playground for me to practice new things related to web development.'
+			/>
+			<meta name='keywords' content='Portfolio, Website, Anarya Putra' />
 		</Head>
 		<Page id='home' className={poppins.className}>
 			<Hero />
