@@ -4,8 +4,10 @@
 /** Components */
 import {
 	AdvancedImage,
+	Behance,
 	Button,
 	DarkTooltip,
+	Dribbble,
 	Heading,
 	Section,
 	SectionBody,
@@ -14,12 +16,10 @@ import {
 	Subheading,
 	Text,
 } from '@/components';
-/** Contexts */
-import { useIsDesktopContext } from '@/contexts';
 /** Hooks */
 import { useFade, useLoaded } from '@/hooks';
 /** Material UI */
-import { MailOutline } from '@mui/icons-material';
+import { GitHub, Instagram, LinkedIn, MailOutline } from '@mui/icons-material';
 import { Box, Zoom } from '@mui/material';
 /** clsx */
 import clsx from 'clsx';
@@ -29,7 +29,6 @@ import Link from 'next/link';
 import React from 'react';
 /** React Intersection */
 import { InView } from 'react-intersection-observer';
-
 /**
  * Components
  */
@@ -155,84 +154,92 @@ const Footer = (): React.JSX.Element => {
 
 	const isLoaded: boolean = useLoaded({ inView });
 	const shouldFade: boolean = useFade({ inView, isLoaded });
-	const isDesktop: boolean = useIsDesktopContext();
 
 	return (
 		<InView onChange={setInView}>
 			{({ ref }) => (
 				<div className={clsx({ 'fade-in-start': shouldFade })} ref={ref}>
 					<SectionFooter className='gap-4' direction='col'>
-						<Box className='flex flex-col items-center justify-center gap-4 sm:flex-row'>
-							<Link
-								className='transition-all duration-500 hover:text-green-accent'
-								href='https://www.behance.net/anaryaindika'
-								target='_blank'
-								rel='noopener noreferer'
-								data-fade='1'
-								data-umami-event='Footer Link: Behance'
-								data-umami-event-type='link'
-							>
-								Behance
-							</Link>
-							<Link
-								className='transition-all duration-500 hover:text-green-accent'
-								href='https://dribbble.com/anaryaputra'
-								target='_blank'
-								rel='noopener noreferer'
-								data-fade={isDesktop ? '1' : '2'}
-								data-umami-event='Footer Link: Dribbble'
-								data-umami-event-type='link'
-							>
-								Dribbble
-							</Link>
-							<Link
-								className='transition-all duration-500 hover:text-green-accent'
-								href='https://github.com/anaryaputra'
-								target='_blank'
-								rel='noopener noreferer'
-								data-fade={isDesktop ? '1' : '3'}
-								data-umami-event='Footer Link: GitHub'
-								data-umami-event-type='link'
-							>
-								GitHub
-							</Link>
-							<Link
-								className='transition-all duration-500 hover:text-green-accent'
-								href='https://www.instagram.com/designbyanarya/'
-								target='_blank'
-								rel='noopener noreferer'
-								data-fade={isDesktop ? '1' : '4'}
-								data-umami-event='Footer Link: Instagram'
-								data-umami-event-type='link'
-							>
-								Instagram
-							</Link>
-							<Link
-								className='transition-all duration-500 hover:text-green-accent'
-								href='https://www.linkedin.com/in/anarya-putra/'
-								target='_blank'
-								rel='noopener noreferer'
-								data-fade={isDesktop ? '1' : '5'}
-								data-umami-event='Footer Link: LinkedIn'
-								data-umami-event-type='link'
-							>
-								LinkedIn
-							</Link>
+						<Box className='flex items-center justify-center gap-4' data-fade='1'>
+							<DarkTooltip title='Behance anaryaindika'>
+								<Link
+									className='lg:animate lg:animate-underline cursor-alias hover:scale-125 lg:hover:scale-100'
+									href='https://www.behance.net/anaryaindika'
+									target='_blank'
+									rel='noopener noreferer'
+									data-umami-event='Footer Link: Behance'
+									data-umami-event-type='link'
+								>
+									<Behance className='lg:hidden' />
+									<span className='hidden lg:block'>Behance</span>
+								</Link>
+							</DarkTooltip>
+							<DarkTooltip title='Dribbble anaryaputra'>
+								<Link
+									className='lg:animate lg:animate-underline cursor-alias hover:scale-125 lg:hover:scale-100'
+									href='https://dribbble.com/anaryaputra'
+									target='_blank'
+									rel='noopener noreferer'
+									data-umami-event='Footer Link: Dribbble'
+									data-umami-event-type='link'
+								>
+									<Dribbble className='lg:hidden' />
+									<span className='hidden lg:block'>Dribbble</span>
+								</Link>
+							</DarkTooltip>
+							<DarkTooltip title='GitHub anaryaputra'>
+								<Link
+									className='lg:animate lg:animate-underline cursor-alias hover:scale-125 lg:hover:scale-100'
+									href='https://github.com/anaryaputra'
+									target='_blank'
+									rel='noopener noreferer'
+									data-umami-event='Footer Link: GitHub'
+									data-umami-event-type='link'
+								>
+									<GitHub className='lg:hidden' />
+									<span className='hidden lg:block'>GitHub</span>
+								</Link>
+							</DarkTooltip>
+							<DarkTooltip title='Instagram designbyanarya'>
+								<Link
+									className='lg:animate lg:animate-underline cursor-alias hover:scale-125 lg:hover:scale-100'
+									href='https://www.instagram.com/designbyanarya/'
+									target='_blank'
+									rel='noopener noreferer'
+									data-umami-event='Footer Link: Instagram'
+									data-umami-event-type='link'
+								>
+									<Instagram className='lg:hidden' />
+									<span className='hidden lg:block'>Instagram</span>
+								</Link>
+							</DarkTooltip>
+							<DarkTooltip title='LinkedIn Anarya Putra'>
+								<Link
+									className='lg:animate lg:animate-underline cursor-alias hover:scale-125 lg:hover:scale-100'
+									href='https://www.linkedin.com/in/anarya-putra/'
+									target='_blank'
+									rel='noopener noreferer'
+									data-umami-event='Footer Link: LinkedIn'
+									data-umami-event-type='link'
+								>
+									<LinkedIn className='lg:hidden' />
+									<span className='hidden lg:block'>LinkedIn</span>
+								</Link>
+							</DarkTooltip>
 						</Box>
-						<Box className='flex items-center justify-center text-center'>
+						<Box className='flex items-center justify-center text-center' data-fade='2'>
 							<Link
-								className='cursor-alias transition-all duration-400 hover:text-green-accent'
+								className='animate animate-underline cursor-alias'
 								href='https://analytics.anaryaindika.com/share/rLENnYXcQFIccHeZ/Personal%20Website'
 								target='_blank'
 								rel='noopener noreferer'
-								data-fade={isDesktop ? '2' : '6'}
 								data-umami-event='Footer Link: Analytics'
 								data-umami-event-type='link'
 							>
 								Analytics
 							</Link>
 						</Box>
-						<Text className='text-center' data-fade={isDesktop ? '3' : '7'}>
+						<Text className='text-center' data-fade='3'>
 							© Anarya Putra 2023. All Rights Reserved.
 						</Text>
 					</SectionFooter>
