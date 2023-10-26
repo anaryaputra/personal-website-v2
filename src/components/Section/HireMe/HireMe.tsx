@@ -16,8 +16,6 @@ import {
 	Subheading,
 	Text,
 } from '@/components';
-/** Contexts */
-import { useIsDesktopContext } from '@/contexts';
 /** Hooks */
 import { useFade, useLoaded } from '@/hooks';
 /** Material UI */
@@ -156,21 +154,19 @@ const Footer = (): React.JSX.Element => {
 
 	const isLoaded: boolean = useLoaded({ inView });
 	const shouldFade: boolean = useFade({ inView, isLoaded });
-	const isDesktop: boolean = useIsDesktopContext();
 
 	return (
 		<InView onChange={setInView}>
 			{({ ref }) => (
 				<div className={clsx({ 'fade-in-start': shouldFade })} ref={ref}>
 					<SectionFooter className='gap-4' direction='col'>
-						<Box className='flex items-center justify-center gap-4'>
+						<Box className='flex items-center justify-center gap-4' data-fade='1'>
 							<DarkTooltip title='Behance anaryaindika'>
 								<Link
 									className='lg:animate lg:animate-underline cursor-alias hover:scale-125 lg:hover:scale-100'
 									href='https://www.behance.net/anaryaindika'
 									target='_blank'
 									rel='noopener noreferer'
-									data-fade='1'
 									data-umami-event='Footer Link: Behance'
 									data-umami-event-type='link'
 								>
@@ -184,7 +180,6 @@ const Footer = (): React.JSX.Element => {
 									href='https://dribbble.com/anaryaputra'
 									target='_blank'
 									rel='noopener noreferer'
-									data-fade={isDesktop ? '1' : '2'}
 									data-umami-event='Footer Link: Dribbble'
 									data-umami-event-type='link'
 								>
@@ -198,7 +193,6 @@ const Footer = (): React.JSX.Element => {
 									href='https://github.com/anaryaputra'
 									target='_blank'
 									rel='noopener noreferer'
-									data-fade={isDesktop ? '1' : '3'}
 									data-umami-event='Footer Link: GitHub'
 									data-umami-event-type='link'
 								>
@@ -212,7 +206,6 @@ const Footer = (): React.JSX.Element => {
 									href='https://www.instagram.com/designbyanarya/'
 									target='_blank'
 									rel='noopener noreferer'
-									data-fade={isDesktop ? '1' : '4'}
 									data-umami-event='Footer Link: Instagram'
 									data-umami-event-type='link'
 								>
@@ -226,7 +219,6 @@ const Footer = (): React.JSX.Element => {
 									href='https://www.linkedin.com/in/anarya-putra/'
 									target='_blank'
 									rel='noopener noreferer'
-									data-fade={isDesktop ? '1' : '5'}
 									data-umami-event='Footer Link: LinkedIn'
 									data-umami-event-type='link'
 								>
@@ -235,20 +227,19 @@ const Footer = (): React.JSX.Element => {
 								</Link>
 							</DarkTooltip>
 						</Box>
-						<Box className='flex items-center justify-center text-center'>
+						<Box className='flex items-center justify-center text-center' data-fade='2'>
 							<Link
 								className='cursor-alias transition-all duration-400 hover:text-green-accent'
 								href='https://analytics.anaryaindika.com/share/rLENnYXcQFIccHeZ/Personal%20Website'
 								target='_blank'
 								rel='noopener noreferer'
-								data-fade={isDesktop ? '2' : '6'}
 								data-umami-event='Footer Link: Analytics'
 								data-umami-event-type='link'
 							>
 								Analytics
 							</Link>
 						</Box>
-						<Text className='text-center' data-fade={isDesktop ? '3' : '7'}>
+						<Text className='text-center' data-fade='3'>
 							© Anarya Putra 2023. All Rights Reserved.
 						</Text>
 					</SectionFooter>
