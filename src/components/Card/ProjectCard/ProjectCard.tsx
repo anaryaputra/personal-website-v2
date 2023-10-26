@@ -29,8 +29,7 @@ const ProjectCard = ({ data }: ProjectCardProps): React.JSX.Element => {
 
 	return (
 		<Card
-			className='group relative aspect-video w-full min-w-full cursor-pointer overflow-hidden p-0 backdrop-blur sm:min-w-min'
-			// onClick={handleClick}
+			className='group relative aspect-video w-full min-w-full overflow-hidden p-0 backdrop-blur sm:min-w-min'
 			ref={cardRef}
 		>
 			<CardMedia
@@ -84,6 +83,9 @@ const ProjectCard = ({ data }: ProjectCardProps): React.JSX.Element => {
 					<Text
 						className='animate animate-scale-up animate-underline cursor-alias before:bg-green-accent'
 						onClick={handleClick}
+						data-umami-event='Portfolio: See the project'
+						data-umami-event-project={data.attributes.title}
+						data-umami-event-type='link'
 					>
 						See the project →
 					</Text>

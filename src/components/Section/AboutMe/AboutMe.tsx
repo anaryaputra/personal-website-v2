@@ -201,6 +201,8 @@ const ProjectContribution = ({ data }: ProjectContributionProps): React.JSX.Elem
 											startIcon={<OpenInNewIcon />}
 											variant='contained'
 											onClick={() => handleRedirectToProject('https://medbiz.id/')}
+											data-umami-event='Project Contribution-Link: Medbiz'
+											data-umami-event-type='link'
 										>
 											medbiz.id
 										</Button>
@@ -209,6 +211,8 @@ const ProjectContribution = ({ data }: ProjectContributionProps): React.JSX.Elem
 											startIcon={<OpenInNewIcon />}
 											variant='contained'
 											onClick={() => handleRedirectToProject('https://www.jict.co.id/')}
+											data-umami-event='Project Contribution-Link: JICT'
+											data-umami-event-type='link'
 										>
 											jict.co.id
 										</Button>

@@ -43,6 +43,8 @@ const Navlink = ({ className, links, ...props }: NavlinkProps): React.JSX.Elemen
 					className='transition-colors hover:text-green-accent'
 					href='#'
 					onClick={(e) => handleNavigate({ e, link })}
+					data-umami-event={`Navlink-Link: ${link.label}`}
+					data-umami-event-type='link'
 				>
 					{link.label}
 				</Link>

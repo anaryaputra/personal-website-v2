@@ -91,6 +91,8 @@ const Hero = (): React.JSX.Element => {
 											'https://docs.google.com/document/d/1Z8lQna6Jn9Xi6-cM7b4vmu5Q0tymOX-nx7zFZRfTVxQ/edit?usp=share_link'
 										)
 									}
+									data-umami-event='Hero-Link: CV'
+									data-umami-event-type='link'
 								>
 									CV
 								</Button>
@@ -107,6 +109,8 @@ const Hero = (): React.JSX.Element => {
 											'https://docs.google.com/document/d/1-MYFQw9ARH5ut542QAUXbW8RoNl6xYl0tl9q16cGvjM/edit?usp=share_link'
 										)
 									}
+									data-umami-event='Hero-Link: Resume'
+									data-umami-event-type='link'
 								>
 									Resume
 								</Button>
@@ -118,6 +122,8 @@ const Hero = (): React.JSX.Element => {
 									startIcon={<GitHubIcon />}
 									color='inherit'
 									onClick={(e) => openInNewTab(e, 'https://github.com/anaryaputra')}
+									data-umami-event='Hero-Link: GitHub'
+									data-umami-event-type='link'
 								>
 									anaryaputra
 								</Button>
@@ -129,6 +135,8 @@ const Hero = (): React.JSX.Element => {
 									startIcon={<LinkedInIcon />}
 									color='inherit'
 									onClick={(e) => openInNewTab(e, 'https://www.linkedin.com/in/anarya-putra/')}
+									data-umami-event='Hero-Link: LinkedIn'
+									data-umami-event-type='link'
 								>
 									Anarya Putra
 								</Button>
