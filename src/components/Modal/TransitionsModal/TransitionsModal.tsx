@@ -13,12 +13,24 @@ import React from 'react';
  */
 interface TransitionsModalProps extends React.PropsWithChildren {
 	buttonText: string;
+	umami: {
+		event: string;
+		experience: {
+			role: string;
+			institution: string;
+		};
+	};
 }
 
 /**
  * Components
  */
-const TransitionsModal = ({ buttonText = 'Button', children, ...props }: TransitionsModalProps): React.JSX.Element => {
+const TransitionsModal = ({
+	buttonText = 'Button',
+	children,
+	umami,
+	...props
+}: TransitionsModalProps): React.JSX.Element => {
 	const [open, setOpen] = React.useState<boolean>(false);
 
 	const handleOpen = (): void => setOpen(true);
@@ -31,6 +43,9 @@ const TransitionsModal = ({ buttonText = 'Button', children, ...props }: Transit
 				color='inherit'
 				variant='outlined'
 				onClick={handleOpen}
+				data-umami-event={umami.event}
+				data-umami-event-experience={umami.experience}
+				data-umami-event-type='navigate'
 			>
 				{buttonText}
 			</Button>

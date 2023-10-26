@@ -63,7 +63,16 @@ const ExperienceCard = ({ data }: ExperienceProps): React.JSX.Element => {
 				</Box>
 			</CardContent>
 			<CardActions className='w-full'>
-				<TransitionsModal buttonText='Find More Details'>
+				<TransitionsModal
+					buttonText='Find More Details'
+					umami={{
+						event: 'Experience: Find more details',
+						experience: {
+							role: data.attributes.role,
+							institution: data.attributes.institution?.data.attributes.name ?? '',
+						},
+					}}
+				>
 					<Box className='flex w-full flex-col items-center justify-center gap-8 align-middle'>
 						<AdvancedImage
 							variant='next'
