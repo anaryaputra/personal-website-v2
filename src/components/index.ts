@@ -24,6 +24,12 @@ export { default as CarouselDotButton } from '@/components/Carousel/CarouselDotB
 export { default as Counter } from '@/components/Counter/Counter';
 
 /**
+ * ICON COMPONETNS
+ */
+export { default as Behance } from '@/components/Icons/BehanceIcon/BehanceIcon';
+export { default as Dribbble } from '@/components/Icons/DribbbleIcon/DribbbleIcon';
+
+/**
  * IMAGE COMPONENTS
  */
 export { default as AdvancedImage } from '@/components/Images/AdvancedImage/AdvancedImage';
