@@ -123,6 +123,7 @@ const GetToKnowMe = (): React.JSX.Element => {
 								fallback={`https://placehold.co/${isDesktop ? 320 : 256}?text=Not+Found`}
 								format='svg'
 								fill
+								sizes='(min-width: 0px) 80vw, (min-width: 640px) 40vw, (min-width: 768px) 33.333vw, (min-width: 1024px) 31.250vw, (min-width: 1280px) 25vw, (min-width: 1536px) 20.833vw'
 								alt='Developer Activity'
 								skeleton='rectangular'
 								wrapper={{ className: 'min-h-[256px] lg:min-h-[320px]' }}
@@ -168,6 +169,7 @@ const ProjectContribution = ({ data }: ProjectContributionProps): React.JSX.Elem
 								fallback={`https://placehold.co/${isDesktop ? 320 : 256}?text=Not+Found`}
 								format='svg'
 								fill
+								sizes='(min-width: 0px) 80vw, (min-width: 640px) 40vw, (min-width: 768px) 33.333vw, (min-width: 1024px) 31.250vw, (min-width: 1280px) 25vw, (min-width: 1536px) 20.833vw'
 								alt='Developer Activity'
 								skeleton='rectangular'
 								wrapper={{ className: 'min-h-[256px] lg:min-h-[320px]' }}
@@ -286,7 +288,7 @@ const Footer = (): React.JSX.Element => {
 						data-fade='1'
 						gap={16}
 					>
-						<Separator className='hidden lg:flex lg:flex-1' />
+						<Separator className='hidden lg:flex lg:w-4/5 lg:flex-1' />
 						<Button
 							className='w-full border-white font-medium text-white hover:bg-white hover:text-black lg:max-w-[13.5rem]'
 							variant='outlined'
