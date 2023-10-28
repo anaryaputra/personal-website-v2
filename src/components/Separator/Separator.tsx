@@ -2,24 +2,20 @@
  * Module Imports
  */
 /** Assets */
-import SeparatorSvg from '@/assets/separator.svg';
-/** Next */
-import Image from 'next/image';
+import { Box, BoxProps } from '@mui/material';
 /** React */
 import React from 'react';
 
 /**
- * Interface Declarations
- */
-interface SeparatorProps {
-	className?: string | undefined;
-}
-
-/**
  * Component
  */
-const Separator = ({ className }: SeparatorProps): React.JSX.Element => (
-	<Image className={className} src={SeparatorSvg} alt='Separator' />
+const Separator = (props: BoxProps): React.JSX.Element => (
+	<Box
+		style={{
+			backgroundImage: `url("https://res.cloudinary.com/drahmssud/image/upload/v1698479595/separator_2372172372.svg")`,
+		}}
+		{...props}
+	/>
 );
 
 export default Separator;
