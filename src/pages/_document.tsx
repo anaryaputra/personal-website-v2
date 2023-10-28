@@ -3,10 +3,12 @@
  */
 /** Next */
 import { Html, Head, Main, NextScript } from 'next/document';
-import Script from 'next/script';
 /** React */
 import React from 'react';
 
+/**
+ * Component
+ */
 const Document = (): React.JSX.Element => (
 	<Html lang='en'>
 		<Head>
@@ -17,7 +19,7 @@ const Document = (): React.JSX.Element => (
 			<link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
 			<link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
 			<link rel='manifest' href='/site.webmanifest' />
-			<Script
+			<script
 				async
 				src='https://analytics.anaryaindika.com/script.js'
 				data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ''}
