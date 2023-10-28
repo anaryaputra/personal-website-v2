@@ -94,13 +94,19 @@ const Body = ({ data }: SpecializationProps): React.JSX.Element => {
 									<CardContent className='flex flex-col gap-8'>
 										<Box className='flex justify-center'>
 											<AdvancedImage
+												className='object-contain'
 												src={specialization.attributes.icon.data.attributes.url}
 												fallback={`https://placehold.co/48?text=Not+Found`}
-												variant='next'
+												alt={specialization.attributes.icon.data.attributes.alternativeText}
+												format='svg'
 												height={48}
 												width={48}
-												alt={specialization.attributes.icon.data.attributes.alternativeText}
+												variant='cloudinary'
 												skeleton='rectangular'
+												wrapper={{
+													height: 48,
+													width: 48,
+												}}
 											/>
 										</Box>
 										<Box className='flex flex-col gap-2'>
