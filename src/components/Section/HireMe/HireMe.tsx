@@ -16,6 +16,8 @@ import {
 	Subheading,
 	Text,
 } from '@/components';
+/** Contexts */
+import { useIsDesktopContext } from '@/contexts';
 /** Hooks */
 import { useFade, useLoaded } from '@/hooks';
 /** Material UI */
@@ -73,6 +75,7 @@ const Body = (): React.JSX.Element => {
 	const [isCopied, setIsCopied] = React.useState<boolean>(false);
 
 	const isLoaded: boolean = useLoaded({ inView });
+	const isDesktop: boolean = useIsDesktopContext();
 	const shouldFade: boolean = useFade({ inView, isLoaded });
 
 	function handleLeaveCopyEmail(): void {
@@ -95,18 +98,15 @@ const Body = (): React.JSX.Element => {
 					<SectionBody className='items-center justify-center align-middle' direction='col'>
 						<Box className='flex justify-center' data-fade='1'>
 							<AdvancedImage
+								className='object-contain'
 								variant='cloudinary'
-								src='partnership_bro_956d02c41b'
-								fallback='data:image/webp;base64,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'
+								src='https://res.cloudinary.com/drahmssud/image/upload/v1697034906/partnership_bro_956d02c41b.svg'
+								fallback={`https://placehold.co/${isDesktop ? 320 : 256}?text=Not+Found`}
+								alt='Partnership'
 								format='svg'
-								width={256}
-								height={256}
-								skeleton={{
-									use: true,
-									height: 256,
-									width: 256,
-								}}
-								alt='Partnership Illustration'
+								height={isDesktop ? 320 : 256}
+								width={isDesktop ? 320 : 256}
+								skeleton='rectangular'
 							/>
 						</Box>
 						<Box className='flex flex-col items-center justify-center gap-8 align-middle'>

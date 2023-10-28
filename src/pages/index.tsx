@@ -50,7 +50,7 @@ const Home = ({
 		<Page id='home' className={poppins.className}>
 			<Hero />
 			<Navbar />
-			<Box className='flex flex-col items-center gap-y-64 pb-32 pt-64'>
+			<Box className='flex flex-col items-center gap-y-64 pb-32 pt-32 md:pt-48 lg:pt-64'>
 				<AboutMe data={{ experiences: experiences, project_collaborations: projectCollaborations }} />
 				<SpecializationSection data={{ specializations: specializations, teches: teches }} />
 				<Portfolio data={featuredProjects} />

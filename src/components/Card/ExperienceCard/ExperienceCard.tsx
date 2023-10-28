@@ -38,17 +38,18 @@ const ExperienceCard = ({ data }: ExperienceProps): React.JSX.Element => {
 	return (
 		<Card className='h-full w-full items-center bg-[#111111]'>
 			<CardMedia
-				variant='next'
+				className='max-h-16 max-w-[64px] rounded-full object-contain'
+				variant='cloudinary'
 				src={data.attributes.institution?.data.attributes.logo?.data.attributes.url ?? ''}
-				fallback='data:image/webp;base64,UklGRuQDAABXRUJQVlA4WAoAAAAgAAAAPwAAPwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDgg9gEAADAPAJ0BKkAAQAA+KRCGQiGhDH3GAAwBQlpABbZKpvIxHo/0n8VdEb/M/yQywL4X/Nvx5/JnYAP51+JeyAfx7+h/jT7i38d5Gvkv/L/jl9AX8S/kH9z/L7+6///wAfqr7B36qm6PRzSosxUTjv3KI69C7wlHR9CebmbweMOENrKR50AA/v6+lI9q/uzf6IE1ksCTSwcfeWbuxRohjP/3Zb/2gHMvy/mzZs+/f0f+NvSxkEmVlDnYYUhr0fp12bpa/waMr3F3/+hamdZwE/7/FvioE4dP1/7bBorf//lMEORiNuZB+LjViX5hVY61b/qOPn+5Jn+CkcI9lt8y/Kx9QDQ6OmlB/Fk/ZdVjo3r493/8Tl//JhXfbuv8igNn8f4V/FU6/Ql0He4n94f//QeJIh65smH9ESFJ7aj8ug7knU60/96qGn//5eybK7fbr/8Npw8oTRgd7yO+QakFbL8gP9xvk6dtWTCAWcKXOYJhCj7CQz8a0p2hGvVKeNVfNOigyxy4KqBWh0BEBuXZT0jvMKu6J/XdCETXuW/+4l3MmDypkStz9GGkYQCnd9ayWanF+bg/ENedUbxCXKt9e8vhV//2vsmLb/5Yd0NZCRM2LQf90yVkg5TQueGc5u1w+Ck/R8wiJTRC0/tn9uhAEMGP/0bOwIiAAAA='
-				height={64}
-				width={64}
-				skeleton={{
-					use: true,
+				fallback={`https://placehold.co/64?text=Not+Found`}
+				height={128}
+				width={128}
+				alt={data.attributes.institution?.data.attributes.logo?.data.attributes.alternativeText ?? ''}
+				skeleton='rounded'
+				wrapper={{
 					height: 64,
 					width: 64,
 				}}
-				alt={data.attributes.institution?.data.attributes.logo?.data.attributes.alternativeText ?? ''}
 			/>
 			<CardContent className='h-full'>
 				<Box className='flex flex-col text-center'>
@@ -75,19 +76,16 @@ const ExperienceCard = ({ data }: ExperienceProps): React.JSX.Element => {
 				>
 					<Box className='flex w-full flex-col items-center justify-center gap-8 align-middle'>
 						<AdvancedImage
-							variant='next'
+							className='max-h-16 max-w-[64px] rounded-full object-contain'
 							src={data.attributes.institution?.data.attributes.logo?.data.attributes.url ?? ''}
-							fallback='data:image/webp;base64,UklGRuQDAABXRUJQVlA4WAoAAAAgAAAAPwAAPwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDgg9gEAADAPAJ0BKkAAQAA+KRCGQiGhDH3GAAwBQlpABbZKpvIxHo/0n8VdEb/M/yQywL4X/Nvx5/JnYAP51+JeyAfx7+h/jT7i38d5Gvkv/L/jl9AX8S/kH9z/L7+6///wAfqr7B36qm6PRzSosxUTjv3KI69C7wlHR9CebmbweMOENrKR50AA/v6+lI9q/uzf6IE1ksCTSwcfeWbuxRohjP/3Zb/2gHMvy/mzZs+/f0f+NvSxkEmVlDnYYUhr0fp12bpa/waMr3F3/+hamdZwE/7/FvioE4dP1/7bBorf//lMEORiNuZB+LjViX5hVY61b/qOPn+5Jn+CkcI9lt8y/Kx9QDQ6OmlB/Fk/ZdVjo3r493/8Tl//JhXfbuv8igNn8f4V/FU6/Ql0He4n94f//QeJIh65smH9ESFJ7aj8ug7knU60/96qGn//5eybK7fbr/8Npw8oTRgd7yO+QakFbL8gP9xvk6dtWTCAWcKXOYJhCj7CQz8a0p2hGvVKeNVfNOigyxy4KqBWh0BEBuXZT0jvMKu6J/XdCETXuW/+4l3MmDypkStz9GGkYQCnd9ayWanF+bg/ENedUbxCXKt9e8vhV//2vsmLb/5Yd0NZCRM2LQf90yVkg5TQueGc5u1w+Ck/R8wiJTRC0/tn9uhAEMGP/0bOwIiAAAA='
-							height={64}
-							width={64}
-							skeleton={{
-								use: true,
-								height: 64,
-								width: 64,
-							}}
+							fallback={`https://placehold.co/64?text=Not+Found`}
+							variant='cloudinary'
+							height={128}
+							width={128}
 							alt={
 								data.attributes.institution?.data.attributes.logo?.data.attributes.alternativeText ?? ''
 							}
+							skeleton='rounded'
 						/>
 						<Box className='flex flex-col text-center'>
 							<Heading className='text-lg font-semibold'>

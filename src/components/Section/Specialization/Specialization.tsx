@@ -19,8 +19,6 @@ import { useFade, useLoaded } from '@/hooks';
 import { Specialization, Tech } from '@/types';
 /** Material UI */
 import { Box, Card, CardContent } from '@mui/material';
-/** Next */
-import Image from 'next/image';
 /** React */
 import React from 'react';
 /** React Intersection */
@@ -96,14 +94,13 @@ const Body = ({ data }: SpecializationProps): React.JSX.Element => {
 									<CardContent className='flex flex-col gap-8'>
 										<Box className='flex justify-center'>
 											<AdvancedImage
-												variant='cloudinary'
-												src={specialization.attributes.icon.data.attributes.hash}
-												fallback='data:image/webp;base64,UklGRj4CAABXRUJQVlA4WAoAAAAgAAAACwAACwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggUAAAABACAJ0BKgwADAAAgA4lpAAOpgO1g01Q5wAA/v/+PSX9+v/pB7yf/tP842leJj5NtK2TgBXitOE//Tg2CpNLL3XV+D+DPerPfnDXP2SMAAAA'
-												format='svg'
+												src={specialization.attributes.icon.data.attributes.url}
+												fallback={`https://placehold.co/48?text=Not+Found`}
+												variant='next'
 												height={48}
 												width={48}
-												skeleton={{ use: true, height: 48, width: 48 }}
 												alt={specialization.attributes.icon.data.attributes.alternativeText}
+												skeleton='rectangular'
 											/>
 										</Box>
 										<Box className='flex flex-col gap-2'>
@@ -157,12 +154,19 @@ const Footer = ({ data }: SpecializationProps): React.JSX.Element => {
 									<Badge
 										key={`tech-${index}`}
 										startIcon={
-											<Image
-												className='h-4 w-auto'
+											<AdvancedImage
+												className='h-4 max-h-4'
 												src={tech.attributes.logo.data.attributes.url}
+												fallback={`https://placehold.co/16?text=Not+Found`}
+												alt={tech.attributes.logo.data.attributes.alternativeText}
+												variant='next'
 												height={16}
 												width={16}
-												alt={tech.attributes.logo.data.attributes.alternativeText}
+												skeleton='rectangular'
+												wrapper={{
+													height: 16,
+													width: 16,
+												}}
 											/>
 										}
 									>

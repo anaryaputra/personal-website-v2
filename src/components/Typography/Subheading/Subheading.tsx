@@ -9,10 +9,10 @@ import React from 'react';
 /**
  * Component
  */
-const Subheading = ({ className, children, ...props }: React.ComponentPropsWithoutRef<'h3'>): React.JSX.Element => (
-	<h3 className={`${styles.subheading} ${className}`} {...props}>
+const Subheading = ({ className, children, ...props }: React.ComponentPropsWithoutRef<'h2'>): React.JSX.Element => (
+	<h2 className={`${styles.subheading} ${className}`} {...props}>
 		{children}
-	</h3>
+	</h2>
 );
 
 export default Subheading;
