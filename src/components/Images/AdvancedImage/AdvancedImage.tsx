@@ -1,6 +1,8 @@
 /**
  * Import Modules
  */
+/** Clsx */
+import clsx from 'clsx';
 /** Material UI */
 import { Skeleton } from '@mui/material';
 /** Next */
@@ -18,9 +20,13 @@ export interface CloudinaryImageProps extends AdvancedImageProps, CldImageProps 
 export interface NextImageProps extends AdvancedImageProps, NextJsImageProps {}
 export interface AdvancedImageProps {
 	fallback: string;
-	skeleton?: ImageSkeleton;
+	skeleton?: 'circular' | 'rectangular' | 'rounded';
+	wrapper?: {
+		className?: string;
+		height?: number;
+		width?: number;
+	};
 	variant: ImageVariant;
-	wrapperClassName?: string;
 }
 export interface ImageSkeleton {
 	use: boolean;
@@ -34,43 +40,51 @@ export type ImageVariant = 'cloudinary' | 'next';
  */
 const AdvancedImage = ({
 	fallback,
-	skeleton,
+	skeleton = 'circular',
 	src,
 	variant,
-	wrapperClassName,
+	wrapper,
 	...props
 }: CloudinaryImageProps & NextImageProps): React.JSX.Element => {
-	const [isLoading, setIsLoading] = React.useState<boolean>(skeleton?.use === true ? true : false);
+	const [isLoaded, setIsLoaded] = React.useState<boolean>(false);
 	const [onErrorSrc, setOnErrorSrc] = React.useState<string | undefined>(undefined);
 
-	function handleError(e: React.SyntheticEvent<HTMLImageElement, Event>): void {
+	const handleError = (e: React.SyntheticEvent<HTMLImageElement, Event>): void => {
 		e?.currentTarget?.src !== fallback && setOnErrorSrc(fallback);
-	}
+	};
 
 	return (
-		<figure className={wrapperClassName}>
-			{isLoading && (
-				<Skeleton
-					className='z-0 bg-neutral-900'
-					variant='rectangular'
-					height={skeleton?.height}
-					width={skeleton?.width}
+		<figure
+			className={clsx(
+				'relative',
+				wrapper && wrapper.className,
+				wrapper && !wrapper.className && `h-[${wrapper.height}px] w-[${wrapper.width}px]`,
+				props.fill && 'h-full w-full'
+			)}
+		>
+			{variant === 'cloudinary' && (
+				<CldImage
+					className={clsx(
+						!isLoaded && props.fill ? 'opacity-0' : 'opacity-100',
+						!isLoaded && !props.fill ? 'hidden' : 'block'
+					)}
+					src={onErrorSrc || src}
+					onError={(e) => handleError(e)}
+					onLoadingComplete={() => setIsLoaded(true)}
+					{...props}
 				/>
 			)}
-			{variant === 'cloudinary' ? (
-				<CldImage
-					src={onErrorSrc || src}
-					onLoadingComplete={() => setIsLoading(false)}
-					onError={(e) => handleError(e)}
-					{...props}
-				/>
-			) : (
+			{variant === 'next' && (
 				<Image
+					className={!isLoaded ? 'hidden' : 'block'}
 					src={onErrorSrc || src}
-					onLoadingComplete={() => setIsLoading(false)}
 					onError={(e) => handleError(e)}
+					onLoadingComplete={() => setIsLoaded(true)}
 					{...props}
 				/>
+			)}
+			{!isLoaded && skeleton && (
+				<Skeleton className='bg-neutral-900' variant='rectangular' width='100%' height='100%' />
 			)}
 		</figure>
 	);
