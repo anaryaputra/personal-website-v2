@@ -43,6 +43,7 @@ const Hero = (): React.JSX.Element => {
 						id='hero'
 					>
 						<AdvancedImage
+							className='max-w-[256px] object-contain lg:max-w-[512px]'
 							src='https://res.cloudinary.com/drahmssud/image/upload/v1697612282/Profile_4c12793d22.png'
 							fallback={`https://placehold.co/${isDesktop ? 512 : 256}?text=Not+Found`}
 							alt='Profile Anarya'
