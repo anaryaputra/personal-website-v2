@@ -230,7 +230,7 @@ const Footer = (): React.JSX.Element => {
 						<Box className='flex items-center justify-center text-center' data-fade='2'>
 							<Link
 								className='animate animate-underline cursor-alias'
-								href='https://analytics.anaryaindika.com/share/rLENnYXcQFIccHeZ/Personal%20Website'
+								href={process.env.NEXT_PUBLIC_UMAMI_SHARE_ANALYTICS_URL}
 								target='_blank'
 								rel='noopener noreferer'
 								data-umami-event='Footer Link: Analytics'

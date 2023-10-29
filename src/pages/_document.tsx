@@ -23,7 +23,6 @@ const Document = (): React.JSX.Element => (
 				async
 				src='https://analytics.anaryaindika.com/script.js'
 				data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ''}
-				data-domains='anaryaindika.com'
 			/>
 		</Head>
 		<body>
