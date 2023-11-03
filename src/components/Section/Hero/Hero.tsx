@@ -82,8 +82,6 @@ const Hero = (): React.JSX.Element => {
 							>
 								<Button
 									className='animate animate-scale-up animate-underline min-w-0 cursor-alias whitespace-nowrap px-0 normal-case'
-									href='https://docs.google.com/document/d/1Z8lQna6Jn9Xi6-cM7b4vmu5Q0tymOX-nx7zFZRfTVxQ/edit?usp=share_link'
-									rel='noopener noreferer'
 									variant='text'
 									startIcon={<Description />}
 									color='inherit'
@@ -100,8 +98,6 @@ const Hero = (): React.JSX.Element => {
 								</Button>
 								<Button
 									className='animate animate-scale-up animate-underline min-w-0 cursor-alias whitespace-nowrap px-0 normal-case'
-									href='https://docs.google.com/document/d/1-MYFQw9ARH5ut542QAUXbW8RoNl6xYl0tl9q16cGvjM/edit?usp=share_link'
-									rel='noopener noreferer'
 									variant='text'
 									startIcon={<Description />}
 									color='inherit'
@@ -118,8 +114,6 @@ const Hero = (): React.JSX.Element => {
 								</Button>
 								<Button
 									className='animate animate-scale-up animate-underline min-w-0 cursor-alias whitespace-nowrap px-0 normal-case'
-									href='https://github.com/anaryaputra'
-									rel='noopener noreferer'
 									variant='text'
 									startIcon={<GitHub />}
 									color='inherit'
@@ -131,8 +125,6 @@ const Hero = (): React.JSX.Element => {
 								</Button>
 								<Button
 									className='animate animate-scale-up animate-underline min-w-0 cursor-alias whitespace-nowrap px-0 normal-case'
-									href='https://www.linkedin.com/in/anarya-putra/'
-									rel='noopener noreferer'
 									variant='text'
 									startIcon={<LinkedIn />}
 									color='inherit'
