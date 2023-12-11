@@ -16,6 +16,7 @@ import {
 } from '@/utils';
 /** Material UI */
 import { Box } from '@mui/material';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 /** Next */
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { Poppins } from 'next/font/google';
@@ -57,6 +58,7 @@ const Home = ({
 				<HireMe />
 			</Box>
 		</Page>
+		<SpeedInsights />
 	</React.Fragment>
 );
 
