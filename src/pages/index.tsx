@@ -18,7 +18,7 @@ import {
 import { Box } from '@mui/material';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 /** Next */
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { Poppins } from 'next/font/google';
 import Head from 'next/head';
 /** React */
@@ -38,7 +38,7 @@ const Home = ({
 	projectCollaborations,
 	specializations,
 	teches,
-}: InferGetServerSidePropsType<typeof getServerSideProps>): React.JSX.Element => (
+}: InferGetStaticPropsType<typeof getStaticProps>): React.JSX.Element => (
 	<React.Fragment>
 		<Head>
 			<title>Anarya Putra</title>
@@ -67,7 +67,7 @@ export default Home;
 /**
  * SSR
  */
-export const getServerSideProps = (async () => {
+export const getStaticProps = (async () => {
 	const experiences: Experience[] = (await client.query({ query: GET_EXPERIENCES })).data.experiences.data;
 	const projectCollaborations: Project[] = (await client.query({ query: GET_PROJECT_COLLABORATIONS })).data.projects
 		.data;
@@ -85,7 +85,7 @@ export const getServerSideProps = (async () => {
 			teches,
 		},
 	};
-}) satisfies GetServerSideProps<{
+}) satisfies GetStaticProps<{
 	experiences: Experience[];
 	featuredProjects: Project[];
 	projectCollaborations: Project[];
