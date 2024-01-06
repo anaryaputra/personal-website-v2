@@ -155,6 +155,8 @@ const Footer = (): React.JSX.Element => {
 	const isLoaded: boolean = useLoaded({ inView });
 	const shouldFade: boolean = useFade({ inView, isLoaded });
 
+	const date = new Date();
+
 	return (
 		<InView onChange={setInView}>
 			{({ ref }) => (
@@ -240,7 +242,7 @@ const Footer = (): React.JSX.Element => {
 							</Link>
 						</Box>
 						<Text className='text-center' data-fade='3'>
-							© Anarya Putra 2023. All Rights Reserved.
+							{`© Anarya Putra ${date.getFullYear()}. All Rights Reserved.`}
 						</Text>
 					</SectionFooter>
 				</div>
